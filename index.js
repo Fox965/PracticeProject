@@ -98,3 +98,5 @@ app.listen(3000, () => {
 //   .catch(err => {
 //     console.error('Unable to connect to the database:', err);
 //   });
+
+// Не говори, что мне делать, я сам всё сделаю как надо! -_-

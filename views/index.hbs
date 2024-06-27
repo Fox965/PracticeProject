@@ -1,38 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    body {
-      @apply bg-gray-100;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="font-[Montserrat]">
 
-  <nav class="bg-blue-600 w-full p-4 text-white">
-    <ul class="flex justify-around">
-      <li><a href="/" class="hover:underline">Home</a></li>
-      <li><a href="/about" class="hover:underline">About</a></li>
-      <li><a href="/services" class="hover:underline">Services</a></li>
-      <li><a href="/contact" class="hover:underline">Contact</a></li>
-    </ul>
-  </nav>
+    <div class="bg-gradient-to-b from-[#F5C343] from-0% via-[#FA9E22] via-25% via-[#360802] via-50% to-black to-93%">
+        <div class="container mx-auto pt-5">
 
-  <div class="flex-grow flex justify-center items-center">
-    <h1 class="text-6xl font-bold text-center text-red-600">Работайте суки!!!</h1>
-  </div>
+            <!--ХЕДЕР-->
 
-  <footer class="bg-blue-600 w-full p-4 text-white text-center">
-    <p>&copy; 2024 O4KO Company Inc. All rights fucked.</p>
-  </footer>
+            <header class="flex justify-between items-center">
+                <a href="/" class="flex gap-x-4 items-center">
+                    <img src="logo.png" alt="logo">
+                    <span class="text-3xl leading-10">Book knight</span>
+                </a>
+                <nav class="flex gap-x-5 list-none text-2xl">
+
+                    <!-- ВРЕМЕННАЯ СТАТИКА-->
+
+                    <li>
+                        <a href="/">Главная</a>
+                    </li>
+                    <li>
+                        <a href="">Контакты</a>
+                    </li>
+                    <li>
+                        <a href="">О сервисе</a>
+                    </li>
+                    <li>
+                        <a href="">Каталог</a>
+                    </li>
+
+                    <!--ДИНАМИКА-->
+
+                    {{#each nav}}
+
+                        <li>
+                            <a href="{{this.url}}">{{this.name}}</a>
+                        </li>
+
+                    {{/each}}
+
+                </nav>
+
+                <div class="flex gap-x-11">
+                    <a href="#" class="flex justify-center items-center w-[70px] h-[70px] bg-gradient-to-b from-[#6183DD] to-[#344777] rounded-full">
+                        <img src="basket-icon.svg" alt="basket">
+                    </a>
+                    <button class="flex justify-center items-center w-[70px] h-[70px] bg-gradient-to-b from-[#6183DD] to-[#344777] rounded-full">
+                        <img src="user-icon.svg" alt="user">
+                    </button>
+                </div>
+            </header>
+
+            <div class="flex justify-between mt-[70px] pb-24 bg-[url('Muzhik.png')] bg-no-repeat bg-[left_300px_bottom] bg-[length:800px]">
+                <div class="mt-40">
+                    <h1 class="max-w-[396px] w-full text-3xl font-black">Твоя книга, твой друг с доставкой на дом!</h1>
+                    <p class="max-w-[420px] w-full mt-6">
+                        Онлайн-магазин по продаже книг любого жанра! Купи для себя друга и получи море увлечений до конца его прочтения.
+                    </p>
+                    <a href="" class="inline-block text-2xl text-white bg-[#222299] py-2.5 px-5 shadow-[0_4px_60px_0_#160A9F] rounded-full mt-14 font-medium opacity-65 duration-300 hover:opacity-100 hover:duration-300">перейти к покупкам</a>
+                </div>
+                <div>
+                    <img src="bookSale.png" alt="book">
+                    <button class="inline-block text-2xl bg-[#EC1010] ml-20 px-20 shadow-[0_4px_60px_0_#FF0000] rounded-full mt-16 opacity-65 duration-300 hover:opacity-100 hover:duration-300">
+                        <span class="relative">
+                            <img src="lineSale.svg" alt="" class="absolute top-1.5">
+                            5 600 р.
+                        </span>
+                        <span class="text-white block">
+                            3 750 р.
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </body>
 </html>

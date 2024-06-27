@@ -11,7 +11,7 @@ const path = require('path');
 const app = express();
 
 app.use(session({ secret: '13AF@$FC@$@@', resave: false, saveUninitialized: false }));
-
+app.use(express.static('public'));
 
 passport.use(new LocalStrategy(async (username, password, done) => {
   try {
@@ -83,6 +83,7 @@ app.post('/register', async (req, res) => {
 });
 
 app.listen(3000, () => {
+  console.log("http://127.0.0.1:3000/")
   console.log('Server is running on port 3000');
 });
 

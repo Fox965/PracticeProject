@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Авторизация</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="style/output.css" rel="stylesheet">
+    <script src="scripts/index.js" defer></script>
+</head>
+<body class="font-main">
+    <div class="main-background">
+        <div class="container mx-auto pt-5 relative">
+            {{> header}}
+
+            <div class="absolute top-[350px] w-[161px] h-[161px] flex justify-center items-center rounded-full animate-upper-fast auth-gradient">
+                <img src="assets/auth/round1.png" alt="" class="rounded-full w-[75%]">
+            </div>
+            <div class="absolute top-[120px] left-[200px] w-[161px] h-[161px] flex justify-center items-center rounded-full animate-upper-middle auth-gradient">
+                <img src="assets/auth/round2.png" alt="" class="rounded-full w-[75%]">
+            </div>
+            <div class="absolute top-[150px] left-[650px] w-[354px] h-[354px] flex justify-center items-center rounded-full animate-upper-slow auth-gradient">
+                <img src="assets/auth/round3.png" alt="" class="rounded-full w-[75%]">
+            </div>
+            <div class="absolute top-[900px] left-[650px] w-[474px] h-[474px] flex justify-center items-center rounded-full animate-upper-fast auth-gradient">
+                <img src="assets/auth/round4.png" alt="" class="rounded-full w-[75%]">
+            </div>
+            <div class="absolute top-[1050px] left-[70px] w-[405px] h-[405px] flex justify-center items-center rounded-full animate-upper-slow auth-gradient">
+                <img src="assets/auth/round5.png" alt="" class="rounded-full w-[75%]">
+            </div>
+            <div class="absolute top-[950px] w-[161px] h-[161px] flex justify-center items-center rounded-full animate-upper-middle auth-gradient">
+                <img src="assets/auth/round6.png" alt="" class="rounded-full w-[75%]">
+            </div>
+
+            <div class="flex justify-evenly items-center pt-[292px] pb-[345px]">
+                <div id="enterForm" class="flex justify-center items-center text-2xl font-black w-[674px] h-[639px] rounded-full auth-gradient">
+                    <div class="flex justify-between flex-col items-center h-[85%] mt-[53px] mb-[36px] ml-[77px] mr-[85px]">
+                        <p class="">Вход</p>
+                        <form action="" class="flex flex-col">
+                            <input type="text" placeholder="Логин" class="text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-10 w-[511px] border-b">
+                            <div class="flex relative">
+                                <input id="passField" type="password" placeholder="Пароль" class="text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-10 w-[511px] border-b">
+                                <div id="showPass" class="cursor-pointer text-transparent size-[37px] absolute -top-4 right-0 bg-[url('/assets/auth/eye-close.png')]"></div>
+                            </div>
+                            <button>Войти</button>
+                        </form>
+                        <button id="regButton">Регистрация</button>
+                    </div>
+                </div>
+                <div id="regForm" class="hidden flex justify-center items-center text-2xl font-black w-[674px] h-[639px] rounded-full auth-gradient">
+                    <div class="flex justify-between flex-col items-center h-[85%] mt-[53px] mb-[36px] ml-[77px] mr-[85px]">
+                        <p class="">Регистрация</p>
+                        <form action="" class="flex flex-col">
+                            <input type="text" placeholder="ИМЯ" class="text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-6 w-[511px] border-b">
+                            <input type="text" placeholder="Логин" class="text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-6 w-[511px] border-b">
+                            <input type="email" placeholder="Ваша почта" class="text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-6 w-[511px] border-b">
+                            <div class="flex flex-col">
+                                <input id="passRegField" type="password" placeholder="Пароль" class="text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-6 w-[511px] border-b">
+                                <div class="flex relative">
+                                    <input id="passRegRepeatField" type="password" placeholder="Повторите пароль" class="text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-6 w-[511px] border-b">
+                                    <div id="showRegPass" class="cursor-pointer text-transparent size-[37px] absolute -top-4 right-0 bg-[url('/assets/auth/eye-close.png')]"></div>
+                                </div>
+                            </div>
+                            <button class="mt-10">Зарегистрироваться</button>
+                        </form>
+                        <button id="enterButton">Войти</button>
+                    </div>
+                </div>
+                <img src="assets/auth/men-point-in-ass.png" class="h-[646px] animate-sex" alt="men-point-in-ass" >
+            </div>
+        </div>
+        <img src="assets/auth/waves.png" alt="waves" class="w-full">
+    </div>
+</body>
+</html>

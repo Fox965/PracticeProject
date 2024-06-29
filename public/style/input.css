@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+    .auth-gradient{
+        @apply bg-gradient-to-br from-[#ffffff] from-40% to-[#EABB5F] to-100%;
+    }
+}
+
 .main-background {
     background-image: linear-gradient(#F5C343 0, #FA9E22 25%, #360802 50%, #000 93%);
 }

@@ -25,29 +25,25 @@ app.listen(port, function(){
   console.log(`http://localhost:${port}/`)
 })
 
+let nav = [
+  {name: "Главная",  url: "/" },
+  {name: "Контакты", url: "/contacts"},
+  {name: "О сервисе", url: "/about" },
+  {name: "Каталог", url: "/catalog" }
+]
+
 app.get(`/`, function(req, res){
   res.render(`index`, {
-    nav: [
-      {
-        name: "Главная",
-        url: "#"
-      },
-      {
-        name: "Контакты",
-        url: "#"
-      },
-      {
-        name: "О сервисе",
-        url: "#"
-      },
-      {
-        name: "Каталог",
-        url: "#"
-      }
-    ],
+    nav: nav,
     user: {
       user: null,
       id: 0
     }
   })
+})
+
+app.get(`/auth`, (req, res)=>{
+  res.render(`auth`, {
+    nav: nav,
+  });
 })

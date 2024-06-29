@@ -7,72 +7,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="style/output.css" rel="stylesheet">
+    <script src="scripts/index.js" defer></script>
 </head>
 <body class="font-[Montserrat]">
 
-    <div class="bg-gradient-to-b from-[#F5C343] from-0% via-[#FA9E22] via-25% via-[#360802] via-50% to-black to-93%">
+    <div class="main-background">
         <div class="container mx-auto pt-5">
 
             <!--ХЕДЕР-->
 
-            <header class="flex justify-between items-center">
-                <a href="/" class="flex gap-x-4 items-center">
-                    <img src="logo.png" alt="logo">
-                    <span class="text-3xl leading-10">Book knight</span>
-                </a>
-                <nav class="flex gap-x-5 list-none text-2xl">
+            {{> header}}
 
-                    <!-- ВРЕМЕННАЯ СТАТИКА-->
-
-                    <li>
-                        <a href="/">Главная</a>
-                    </li>
-                    <li>
-                        <a href="">Контакты</a>
-                    </li>
-                    <li>
-                        <a href="">О сервисе</a>
-                    </li>
-                    <li>
-                        <a href="">Каталог</a>
-                    </li>
-
-                    <!--ДИНАМИКА-->
-
-                    {{#each nav}}
-
-                        <li>
-                            <a href="{{this.url}}">{{this.name}}</a>
-                        </li>
-
-                    {{/each}}
-
-                </nav>
-
-                <div class="flex gap-x-11">
-                    <a href="#" class="flex justify-center items-center w-[70px] h-[70px] bg-gradient-to-b from-[#6183DD] to-[#344777] rounded-full">
-                        <img src="basket-icon.svg" alt="basket">
-                    </a>
-                    <button class="flex justify-center items-center w-[70px] h-[70px] bg-gradient-to-b from-[#6183DD] to-[#344777] rounded-full">
-                        <img src="user-icon.svg" alt="user">
-                    </button>
-                </div>
-            </header>
-
-            <div class="flex justify-between mt-[70px] pb-24 bg-[url('Muzhik.png')] bg-no-repeat bg-[left_300px_bottom] bg-[length:800px]">
-                <div class="mt-40">
+            <div class="flex justify-between mt-[70px] pb-20 relative muzhik">
+                <div class="mt-44">
                     <h1 class="max-w-[396px] w-full text-3xl font-black">Твоя книга, твой друг с доставкой на дом!</h1>
                     <p class="max-w-[420px] w-full mt-6">
                         Онлайн-магазин по продаже книг любого жанра! Купи для себя друга и получи море увлечений до конца его прочтения.
                     </p>
-                    <a href="" class="inline-block text-2xl text-white bg-[#222299] py-2.5 px-5 shadow-[0_4px_60px_0_#160A9F] rounded-full mt-14 font-medium opacity-65 duration-300 hover:opacity-100 hover:duration-300">перейти к покупкам</a>
+                    <a href="" class="inline-block text-2xl text-white bg-[#222299] py-2.5 px-5 shadow-[0_4px_60px_0_#160A9F] rounded-full mt-14 font-medium opacity-65 duration-300 hover:opacity-100 hover:bg-[#292C74] hover:duration-300">перейти к покупкам</a>
                 </div>
                 <div>
-                    <img src="bookSale.png" alt="book">
-                    <button class="inline-block text-2xl bg-[#EC1010] ml-20 px-20 shadow-[0_4px_60px_0_#FF0000] rounded-full mt-16 opacity-65 duration-300 hover:opacity-100 hover:duration-300">
+                    <img src="assets/mainPage/bookSale.png" alt="book">
+                    <button class="inline-block text-2xl bg-[#EC1010] ml-20 px-20 shadow-[0_4px_60px_0_#FF0000] rounded-full mt-16 text-shadow-1 opacity-65 duration-300 hover:bg-[#750606] hover:shadow-[0_4px_60px_0_#EC101065] hover:duration-300">
                         <span class="relative">
-                            <img src="lineSale.svg" alt="" class="absolute top-1.5">
+                            <img src="assets/lineSale.svg" alt="" class="absolute top-1.5">
                             5 600 р.
                         </span>
                         <span class="text-white block">
@@ -80,9 +39,197 @@
                         </span>
                     </button>
                 </div>
+                <div class="blur-effect"></div>
             </div>
-
         </div>
+
+        <div class="bg-[url(../assets/mainPage/lib.png)] opacity-80 mt-10">
+            <div class="container mx-auto">
+                <div class="max-w-[429px] w-full pt-20 pb-9 relative left-[900px]">
+                    <h2 class="text-6xl font-black text-with-outline">
+                        Миллионы книг в одно нажатие
+                    </h2>
+                    <p class="text-with-outline text-2xl font-medium mt-3.5">
+                        представьте что здесь очень длинный текст
+                    </p>
+                    <a href="" class="block text-with-outline text-center text-3xl font-medium mt-24 py-6 px-5 rounded-full border-black borders-1 border-solid background-button">
+                        Зарегистрироваться
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6 px-9">
+            <h2 class="ml-10 text-2xl text-white font-medium">Топ недели</h2>
+            <div class="mt-4 flex gap-x-3">
+                <button class="relative top-[-60px]">
+                    <svg width="31" height="49" viewBox="0 0 31 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30 0.999999L5.53878e-07 25.5217L30 48" stroke="white" stroke-width="2"/>
+                    </svg>
+                </button>
+                <div class="flex gap-x-24">
+                    <div class="max-w-[209px] w-full">
+                        <div class="max-w-[209px] w-full h-auto">
+                            <img src="/assets/mainPage/slide-1.png" alt="sldie-1" class="w-full">
+                        </div>
+                        <h4 class="mt-4 text-[28px] text-white font-medium">451 градус по фаренгейту</h4>
+                        <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
+                    </div>
+                    <div class="max-w-[209px] w-full">
+                        <div class="max-w-[209px] w-full h-auto">
+                            <img src="assets/mainPage/slide-2.png" alt="sldie-2" class="w-full">
+                        </div>
+                        <h4 class="mt-4 text-[28px] text-white font-medium">скотный двор</h4>
+                        <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
+                    </div>
+                    <div class="max-w-[209px] w-full">
+                        <div class="max-w-[209px] w-full h-auto">
+                            <img src="assets/mainPage/slide-3.png" alt="sldie-3" class="w-full">
+                        </div>
+                        <h4 class="mt-4 text-[28px] text-white font-medium">метро 2033</h4>
+                        <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
+                    </div>
+                    <div class="max-w-[209px] w-full">
+                        <div class="max-w-[209px] w-full h-auto">
+                            <img src="assets/mainPage/slide-4.png" alt="sldie-4" class="w-full">
+                        </div>
+                        <h4 class="mt-4 text-[28px] text-white font-medium">scp</h4>
+                        <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
+                    </div>
+                    <div class="max-w-[209px] w-full">
+                        <div class="max-w-[209px] w-full h-auto">
+                            <img src="assets/mainPage/slide-5.png" alt="sldie-5" class="w-full">
+                        </div>
+                        <h4 class="mt-4 text-[28px] text-white font-medium">зов ктулху</h4>
+                        <p class="mt-2 font-medium text-[#F9B300]">500 ₽</p>
+                    </div>
+                    <div class="max-w-[209px] w-full">
+                        <div class="max-w-[209px] w-full h-auto">
+                            <img src="assets/mainPage/slide-6.png" alt="sldie-6" class="w-full">
+                        </div>
+                        <h4 class="mt-4 text-[28px] text-white font-medium">3 дня счастья</h4>
+                        <p class="mt-2 font-medium text-[#F9B300]">500 ₽</p>
+                    </div>
+                </div>
+                <button class="relative top-[-60px]">
+                    <svg width="32" height="49" viewBox="0 0 32 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 48L31 23.4783L1 1" stroke="white" stroke-width="2"/>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+        
+        <div class="mt-6 relative">
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <img src="assets/mainPage/mess-icon-1.png" alt="mess-icon-1">
+                        </div>
+                        <p>-Ты знал что в Book Knight очень выгодное сотрудничество?</p>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="assets/mainPage/mess-icon-2.png" alt="mess-icon-2">
+                        </div>
+                        <p>как начать сотрудничать ?</p>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="assets/mainPage/mess-icon-1.png" alt="mess-icon-1">
+                        </div>
+                        <p>Это очень легко! <br> Просто перейди по кнопке Начать</p>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="assets/mainPage/mess-icon-2.png" alt="mess-icon-2">
+                        </div>
+                        <p>Уже регистрируюсь!!!</p>
+                    </div>
+                </div>
+                <a href="" class="block">
+                    НАЧАТЬ
+                </a>
+            </div>
+            <img src="assets/mainPage/mess-1.png" alt="mess-1">
+            <img src="assets/mainPage/mess-2.png" alt="mess-2">
+            <img src="assets/mainPage/mess-3.png" alt="mess-3">
+            <img src="assets/mainPage/mess-3.png" alt="mess-3">
+        </div>
+
+        <div>
+            <p>
+                @”Ut enim ad minim veniam, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p>
+                Excepteur sint occaecat cupidatat non proident, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+            </p>
+            <p>
+                Excepteur sint occaecat cupidatat non proident, nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, qui dolorem eum fugiat, quo voluptas nulla pariatur.
+            </p>
+            <p>
+                Sed ut perspiciatis, quia voluptas sit, aspernatur aut odit aut...
+            </p>
+        </div>
+
+        <footer>
+            <div>
+                <a href="">
+                    vk
+                </a>
+                <a href="">
+                    x
+                </a>
+                <a href="">
+                    youtube
+                </a>
+            </div>
+            <hr>
+            <div>
+                <div>
+                    <a href="">
+                        правила использования сайта
+                    </a>
+                    <a href="">
+                        политика персональных данных
+                    </a>
+                    <a href="">
+                        политика конфиденциальности
+                    </a>
+                    <a href="">
+                        информация о разработке
+                    </a>
+                    <a href="">
+                        политика cookie
+                    </a>
+                </div>
+                <p>
+                    &copy; Все права защищены 2024 АО ОЧКО
+                </p>
+            </div>
+            <div>
+                <div>
+                    <img src="assets/mainPage/mess-icon-2" alt="director">
+                </div>
+                <div>
+                    <div>
+                        <img src="" alt="designer">
+                        <img src="" alt="frontend">
+                        <img src="" alt="tester">
+                        <img src="" alt="designer">
+                    </div>
+                    <div>
+                        <img src="" alt="backend">
+                        <img src="" alt="analyst">
+                        <img src="" alt="frontend">
+                        <img src="" alt="backend">
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
     </div>
 
 </body>

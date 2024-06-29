@@ -1,0 +1,59 @@
+<header class="flex justify-between items-center">
+    <a href="/" class="flex gap-x-4 items-center">
+        <img src="assets/logo.png" alt="logo">
+        <span class="text-3xl leading-10">Book knight</span>
+    </a>
+    <nav class="flex gap-x-5 list-none text-2xl">
+
+        <!--МЕНЮ-->
+
+        {{#each nav}}
+
+            <li>
+                <a href="{{this.url}}">{{this.name}}</a>
+            </li>
+
+        {{/each}}
+
+    </nav>
+
+    <div class="flex gap-x-11 relative">
+        <a href="#" class="flex-center w-[70px] h-[70px] bg-gradient-to-b from-[#6183DD] to-[#344777] rounded-full">
+            <img src="assets/basket-icon.svg" alt="basket">
+        </a>
+        <div id="user-button" class="flex gap-6 items-center cursor-pointer">
+            <button class="flex-center w-[70px] h-[70px] bg-gradient-to-b from-[#6183DD] to-[#344777] rounded-full">
+                <img src="assets/user-icon.svg" alt="user">
+            </button>
+            <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.0408 1L7.23689 8.52066L1 1" stroke="black" stroke-width="0.5"/>
+            </svg>
+        </div>
+        <div id="hidden-user" class="absolute hidden border-white borders-1 border-solid bg-black px-3 py-14 list-none z-10 top-20 right-0">
+            {{#if user.user}}
+                {{#ifCond user.user '===' "admin"}}
+                    <li class="text-[#F9B300] text-lg font-medium">
+                        <a href="">личный кабинет</a>
+                    </li>
+                    <li class="text-[#F9B300] text-lg font-medium">
+                        <a href="">админ панель</a>
+                    </li>
+                    <li class="text-[#F9B300] text-lg font-medium">
+                        <a href="">выйти</a>
+                    </li>
+                {{else}}
+                    <li class="text-[#F9B300] text-lg font-medium">
+                        <a href="">личный кабинет</a>
+                    </li>
+                    <li class="text-[#F9B300] text-lg font-medium">
+                        <a href="">выйти</a>
+                    </li>
+                {{/ifCond}}
+            {{else}}
+                <li class="text-[#F9B300] text-lg font-medium">
+                    <a href="">Войти</a>
+                </li>
+            {{/if}}
+        </div>
+    </div>
+</header>

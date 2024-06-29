@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-background {
+    background-image: linear-gradient(#F5C343 0, #FA9E22 25%, #360802 50%, #000 93%);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blur-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to bottom, #F49722, #EC9321);
+    box-shadow: 0 0 20px 20px #ED9321;
+}
+
+.muzhik {
+    background-image: url("../assets/mainPage/Muzhik.png");
+    background-repeat: no-repeat;
+    background-position: 150px bottom;
+}
+
+.text-with-outline {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.background-button {
+    position: relative;
+    background: linear-gradient(59deg, #4C52DA 0, #292C74 69%);
+    transition: .3s;
+    z-index: 1;
+}
+
+.background-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 100px;
+    background: linear-gradient(59deg, #292C74 0, #292C74 100%);
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: -1;
+}
+
+.background-button:hover::before {
+    opacity: 1;
+}
+
+.borders-1 {
+    border-width: 1px;
+}
+
+.text-shadow-1 {
+    text-shadow: 0 4px 4px #00000025;
+}

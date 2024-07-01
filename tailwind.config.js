@@ -6,8 +6,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors:{
+        'stroke': '#E4E4E4',
+        'main-yellow': '#F9B300',
+      },
       fontFamily: {
         'main': 'Montserrat',
+      },
+      boxShadow: {
+        'cards': '0px 0px 64px -35px rgba(0,0,0,0.79)',
       },
       keyframes: {
         wiggle: {

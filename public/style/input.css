@@ -71,3 +71,23 @@
 .text-shadow-1 {
     text-shadow: 0 4px 4px #00000025;
 }
+
+.message {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.message.visible {
+    animation: animeMessage .5s ease-in forwards;
+}
+
+@keyframes animeMessage {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

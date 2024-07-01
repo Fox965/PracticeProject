@@ -36,7 +36,7 @@ app.get(`/`, function(req, res){
   res.render(`index`, {
     nav: nav,
     user: {
-      user: null,
+      user: `random`,
       id: 0
     }
   })
@@ -45,5 +45,29 @@ app.get(`/`, function(req, res){
 app.get(`/auth`, (req, res)=>{
   res.render(`auth`, {
     nav: nav,
+    user: {
+      user: `random`,
+      id: 0
+    }
   });
+})
+
+app.get(`/account`, (req, res)=>{
+  res.render(`account`, {
+    nav: nav,
+    user: {
+      user: `random`,
+      id: 0
+    }
+  })
+})
+
+app.get(`/account/`, (req, res)=>{
+  res.render(`account`, {
+    nav: nav,
+    user: {
+      user: `random`,
+      id: 0
+    }
+  })
 })

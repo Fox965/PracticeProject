@@ -18,7 +18,7 @@
     </nav>
 
     <div class="flex gap-x-11 relative">
-        <a href="#" class="flex-center w-[70px] h-[70px] bg-gradient-to-b from-[#6183DD] to-[#344777] rounded-full">
+        <a href="/account/korzina" class="flex-center w-[70px] h-[70px] bg-gradient-to-b from-[#6183DD] to-[#344777] rounded-full">
             <img src="assets/basket-icon.svg" alt="basket">
         </a>
         <div id="user-button" class="flex gap-6 items-center cursor-pointer">
@@ -33,20 +33,20 @@
             {{#if user.user}}
                 {{#ifCond user.user '===' "admin"}}
                     <li class="text-[#F9B300] text-lg font-medium">
-                        <a href="">личный кабинет</a>
+                        <a href="/account">личный кабинет</a>
                     </li>
                     <li class="text-[#F9B300] text-lg font-medium">
-                        <a href="">админ панель</a>
+                        <a href="/admin">админ панель</a>
                     </li>
                     <li class="text-[#F9B300] text-lg font-medium">
-                        <a href="">выйти</a>
+                        <a href="/auth">выйти</a>
                     </li>
                 {{else}}
                     <li class="text-[#F9B300] text-lg font-medium">
-                        <a href="">личный кабинет</a>
+                        <a href="/account">личный кабинет</a>
                     </li>
                     <li class="text-[#F9B300] text-lg font-medium">
-                        <a href="">выйти</a>
+                        <a href="/auth">выйти</a>
                     </li>
                 {{/ifCond}}
             {{else}}

@@ -1,8 +1,25 @@
-const hiddenUser = document.querySelector(`#user-button`);
-
-hiddenUser.addEventListener(`click`, () => {
-    document.querySelector(`#hidden-user`).classList.toggle(`hidden`)
+document.querySelector(`#user-button`).addEventListener(`click`, () => {
+    document.querySelector(`#hidden-user`).classList.toggle(`hidden`);
 })
+
+// SLIDER
+const slides = document.querySelectorAll(`.slide`);
+let count = 5;
+let position = 0;
+document.querySelector(`#prev`).addEventListener(`click`, () => {
+    if (position) {
+        document.querySelector(`#slider-body`).style.transform = `translateX(${position += 280}px)`;
+        --count;
+    }
+})
+
+document.querySelector(`#next`).addEventListener(`click`, () => {
+    if (count !== slides.length - 1) {
+        document.querySelector(`#slider-body`).style.transform = `translateX(${position -= 280}px)`
+        ++count;
+    }
+})
+// END_SLIDER
 
 let enterForm = document.querySelector(`#enterForm`);
 let regForm = document.querySelector(`#regForm`);

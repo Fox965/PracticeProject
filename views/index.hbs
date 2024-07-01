@@ -30,7 +30,7 @@
                 </div>
                 <div>
                     <img src="assets/mainPage/bookSale.png" alt="book">
-                    <button class="inline-block text-2xl bg-[#EC1010] ml-20 px-20 shadow-[0_4px_60px_0_#FF0000] rounded-full mt-16 text-shadow-1 opacity-65 duration-300 hover:bg-[#750606] hover:shadow-[0_4px_60px_0_#EC101065] hover:duration-300">
+                    <button class="inline-block text-2xl bg-[#EC1010] ml-20 px-20 shadow-[0_4px_60px_0_#FF0000] rounded-full mt-16 text-shadow-1 opacity-65 duration-300 hover:bg-[#750606] hover:shadow-[0_4px_60px_0_#EC101065] hover:opacity-100 hover:duration-300">
                         <span class="relative">
                             <img src="assets/lineSale.svg" alt="" class="absolute top-1.5">
                             5 600 р.
@@ -63,56 +63,93 @@
         <div class="mt-6 px-9">
             <h2 class="ml-10 text-2xl text-white font-medium">Топ недели</h2>
             <div class="mt-4 flex gap-x-3">
-                <button class="relative top-[-60px]">
+                <button id="prev" class="relative top-[-60px]">
                     <svg width="31" height="49" viewBox="0 0 31 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M30 0.999999L5.53878e-07 25.5217L30 48" stroke="white" stroke-width="2"/>
                     </svg>
                 </button>
-                <div class="flex gap-x-24">
-                    <div class="max-w-[209px] w-full">
-                        <div class="max-w-[209px] w-full h-auto">
-                            <img src="/assets/mainPage/slide-1.png" alt="sldie-1" class="w-full">
+                <div class="overflow-hidden">
+                    <div id="slider-body" class="flex gap-x-20 w-[3000px] transition-transform">
+                        <div class="max-w-[210px] w-full slide">
+                            <div class="max-w-[210px] w-full h-auto">
+                                <img src="/assets/mainPage/slide-1.png" alt="sldie-1">
+                            </div>
+                            <h4 class="mt-4 text-[28px] text-white font-medium">451 градус по фаренгейту</h4>
+                            <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
                         </div>
-                        <h4 class="mt-4 text-[28px] text-white font-medium">451 градус по фаренгейту</h4>
-                        <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
-                    </div>
-                    <div class="max-w-[209px] w-full">
-                        <div class="max-w-[209px] w-full h-auto">
-                            <img src="assets/mainPage/slide-2.png" alt="sldie-2" class="w-full">
+                        <div class="max-w-[210px] w-full slide">
+                            <div class="max-w-[210px] w-full h-auto">
+                                <img src="/assets/mainPage/slide-1.png" alt="sldie-2">
+                            </div>
+                            <h4 class="mt-4 text-[28px] text-white font-medium">451 градус по фаренгейту</h4>
+                            <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
                         </div>
-                        <h4 class="mt-4 text-[28px] text-white font-medium">скотный двор</h4>
-                        <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
-                    </div>
-                    <div class="max-w-[209px] w-full">
-                        <div class="max-w-[209px] w-full h-auto">
-                            <img src="assets/mainPage/slide-3.png" alt="sldie-3" class="w-full">
+                        <div class="max-w-[210px] w-full slide">
+                            <div class="max-w-[210px] w-full h-auto">
+                                <img src="/assets/mainPage/slide-1.png" alt="sldie-3">
+                            </div>
+                            <h4 class="mt-4 text-[28px] text-white font-medium">451 градус по фаренгейту</h4>
+                            <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
                         </div>
-                        <h4 class="mt-4 text-[28px] text-white font-medium">метро 2033</h4>
-                        <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
-                    </div>
-                    <div class="max-w-[209px] w-full">
-                        <div class="max-w-[209px] w-full h-auto">
-                            <img src="assets/mainPage/slide-4.png" alt="sldie-4" class="w-full">
+                        <div class="max-w-[210px] w-full slide">
+                            <div class="max-w-[210px] w-full h-auto">
+                                <img src="/assets/mainPage/slide-1.png" alt="sldie-4">
+                            </div>
+                            <h4 class="mt-4 text-[28px] text-white font-medium">451 градус по фаренгейту</h4>
+                            <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
                         </div>
-                        <h4 class="mt-4 text-[28px] text-white font-medium">scp</h4>
-                        <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
-                    </div>
-                    <div class="max-w-[209px] w-full">
-                        <div class="max-w-[209px] w-full h-auto">
-                            <img src="assets/mainPage/slide-5.png" alt="sldie-5" class="w-full">
+                        <div class="max-w-[210px] w-full slide">
+                            <div class="max-w-[210px] w-full h-auto">
+                                <img src="assets/mainPage/slide-2.png" alt="sldie-5">
+                            </div>
+                            <h4 class="mt-4 text-[28px] text-white font-medium">скотный двор</h4>
+                            <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
                         </div>
-                        <h4 class="mt-4 text-[28px] text-white font-medium">зов ктулху</h4>
-                        <p class="mt-2 font-medium text-[#F9B300]">500 ₽</p>
-                    </div>
-                    <div class="max-w-[209px] w-full">
-                        <div class="max-w-[209px] w-full h-auto">
-                            <img src="assets/mainPage/slide-6.png" alt="sldie-6" class="w-full">
+                        <div class="max-w-[210px] w-full slide">
+                            <div class="max-w-[210px] w-full h-auto">
+                                <img src="assets/mainPage/slide-3.png" alt="sldie-6">
+                            </div>
+                            <h4 class="mt-4 text-[28px] text-white font-medium">метро 2033</h4>
+                            <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
                         </div>
-                        <h4 class="mt-4 text-[28px] text-white font-medium">3 дня счастья</h4>
-                        <p class="mt-2 font-medium text-[#F9B300]">500 ₽</p>
+                        <div class="max-w-[210px] w-full slide">
+                            <div class="max-w-[210px] w-full h-auto">
+                                <img src="assets/mainPage/slide-4.png" alt="sldie-7">
+                            </div>
+                            <h4 class="mt-4 text-[28px] text-white font-medium">scp</h4>
+                            <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
+                        </div>
+                        <div class="max-w-[210px] w-full slide">
+                            <div class="max-w-[210px] w-full h-auto">
+                                <img src="assets/mainPage/slide-5.png" alt="sldie-8">
+                            </div>
+                            <h4 class="mt-4 text-[28px] text-white font-medium">зов ктулху</h4>
+                            <p class="mt-2 font-medium text-[#F9B300]">500 ₽</p>
+                        </div>
+                        <div class="max-w-[210px] w-full slide">
+                            <div class="max-w-[210px] w-full h-auto">
+                                <img src="assets/mainPage/slide-6.png" alt="sldie-9">
+                            </div>
+                            <h4 class="mt-4 text-[28px] text-white font-medium">3 дня счастья</h4>
+                            <p class="mt-2 font-medium text-[#F9B300]">500 ₽</p>
+                        </div>
+                        <div class="max-w-[210px] w-full slide">
+                            <div class="max-w-[210px] w-full h-auto">
+                                <img src="assets/mainPage/slide-6.png" alt="sldie-10">
+                            </div>
+                            <h4 class="mt-4 text-[28px] text-white font-medium">3 дня счастья</h4>
+                            <p class="mt-2 font-medium text-[#F9B300]">500 ₽</p>
+                        </div>
+                        <div class="max-w-[210px] w-full slide">
+                            <div class="max-w-[210px]">
+                                <img src="assets/mainPage/slide-6.png" alt="sldie-11">
+                            </div>
+                            <h4 class="mt-4 text-[28px] text-white font-medium">3 дня счастья</h4>
+                            <p class="mt-2 font-medium text-[#F9B300]">500 ₽</p>
+                        </div>
                     </div>
                 </div>
-                <button class="relative top-[-60px]">
+                <button id="next" class="relative top-[-60px]">
                     <svg width="32" height="49" viewBox="0 0 32 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 48L31 23.4783L1 1" stroke="white" stroke-width="2"/>
                     </svg>
@@ -121,45 +158,48 @@
             </div>
         </div>
         
-        <div class="mt-6 relative">
-            <div>
-                <div>
-                    <div>
+        <div class="mt-6 h-screen relative overflow-hidden">
+            <div class="container mx-auto">
+                <div class="relative w-full h-screen z-10">
+                    <div class="absolute top-52 left-36 bg-zinc-950 grid grid-flow-col items-center gap-x-[20px] px-7 rounded-full max-w-[456px] w-full h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
                         <div>
                             <img src="assets/mainPage/mess-icon-1.png" alt="mess-icon-1">
                         </div>
-                        <p>-Ты знал что в Book Knight очень выгодное сотрудничество?</p>
+                        <p class="text-white text-xl font-black">-Ты знал что в Book Knight очень выгодное сотрудничество?</p>
                     </div>
-                    <div>
+                    <div class="absolute top-72 right-10 bg-zinc-950 grid grid-flow-col items-center gap-x-[20px] px-7 rounded-full max-w-[456px] w-full h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
                         <div>
                             <img src="assets/mainPage/mess-icon-2.png" alt="mess-icon-2">
                         </div>
-                        <p>как начать сотрудничать ?</p>
+                        <p class="text-white text-xl font-black">как начать сотрудничать ?</p>
                     </div>
-                    <div>
+                    <div class="absolute top-[485px] left-80 bg-zinc-950 grid grid-flow-col items-center gap-x-[20px] px-7 rounded-full max-w-[456px] w-full h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
                         <div>
                             <img src="assets/mainPage/mess-icon-1.png" alt="mess-icon-1">
                         </div>
-                        <p>Это очень легко! <br> Просто перейди по кнопке Начать</p>
+                        <p class="text-white text-xl font-black">Это очень легко! <br> Просто перейди по кнопке Начать</p>
                     </div>
-                    <div>
+                    <div class="absolute top-[616px] right-0 bg-zinc-950 grid grid-flow-col items-center gap-x-[20px] px-7 rounded-full max-w-[456px] w-full h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
                         <div>
                             <img src="assets/mainPage/mess-icon-2.png" alt="mess-icon-2">
                         </div>
-                        <p>Уже регистрируюсь!!!</p>
+                        <p class="text-white text-xl font-black">Уже регистрируюсь!!!</p>
                     </div>
                 </div>
-                <a href="" class="block">
-                    НАЧАТЬ
-                </a>
+                <div class="flex justify-center relative -top-40 z-20">
+                    <a href="" class="inline-block text-white text-center text-6xl font-medium py-4 px-32 rounded-full background-button shadow-[0_9px_120px_0_#3F44B558]">
+                        НАЧАТЬ
+                    </a>
+                </div>
+
             </div>
-            <img src="assets/mainPage/mess-1.png" alt="mess-1">
-            <img src="assets/mainPage/mess-2.png" alt="mess-2">
-            <img src="assets/mainPage/mess-3.png" alt="mess-3">
-            <img src="assets/mainPage/mess-3.png" alt="mess-3">
+            <img src="assets/mainPage/mess-1.png" alt="mess-1" class="absolute top-[200px] right-[-200px]">
+            <img src="assets/mainPage/mess-2.png" alt="mess-2" class="absolute top-[-150px] right-[-100px]">
+            <img src="assets/mainPage/mess-3.png" alt="mess-3" class="absolute left-[650px] top-[-350px]">
+            <img src="assets/mainPage/mess-3.png" alt="mess-3" class="absolute left-[650px] top-[-750px]">
         </div>
 
-        <div>
+        <div class="mx-12 mt-16 text-white text-xl">
             <p>
                 @”Ut enim ad minim veniam, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
@@ -174,61 +214,65 @@
             </p>
         </div>
 
-        <footer>
-            <div>
-                <a href="">
-                    vk
-                </a>
-                <a href="">
-                    x
-                </a>
-                <a href="">
-                    youtube
-                </a>
+        <footer class="mt-[736px]">
+            <div class="container mx-auto">
+                <div class="flex justify-end gap-x-5">
+                    <a href="" class="block max-w-12 w-full bg-[#2D2D2D] rounded-2xl p-2 hover:bg-gradient-to-br from-[#1A2037] to-[#091867]">
+                        <img src="assets/mainPage/vk.svg" alt="vk" class="block w-full">
+                    </a>
+                    <a href="" class="block max-w-12 w-full bg-[#2D2D2D] rounded-2xl p-2 hover:bg-gradient-to-br from-[#1A2037] to-[#091867]">
+                        <img src="assets/mainPage/twitter-x.svg" alt="twitter" class="block w-full">
+                    </a>
+                    <a href="" class="block max-w-12 w-full bg-[#2D2D2D] rounded-2xl p-2 hover:bg-gradient-to-br from-[#1A2037] to-[#091867]">
+                        <img src="assets/mainPage/youtube.svg" alt="youtobe" class="block w-full">
+                    </a>
+                </div>
             </div>
-            <hr>
-            <div>
+            <hr class="mt-3 mb-4">
+            <div class="container mx-auto flex justify-between items-center text-white">
                 <div>
-                    <a href="">
-                        правила использования сайта
-                    </a>
-                    <a href="">
-                        политика персональных данных
-                    </a>
-                    <a href="">
-                        политика конфиденциальности
-                    </a>
-                    <a href="">
-                        информация о разработке
-                    </a>
-                    <a href="">
-                        политика cookie
-                    </a>
+                    <div class="text-sm flex gap-x-6">
+                        <a href="">
+                            правила использования сайта
+                        </a>
+                        <a href="">
+                            политика персональных данных
+                        </a>
+                        <a href="">
+                            политика конфиденциальности
+                        </a>
+                        <a href="">
+                            информация о разработке
+                        </a>
+                        <a href="">
+                            политика cookie
+                        </a>
+                    </div>
+                    <p class="text-[10px] mt-4">
+                        &copy; Все права защищены 2024 АО ОЧКО
+                    </p>
                 </div>
-                <p>
-                    &copy; Все права защищены 2024 АО ОЧКО
-                </p>
+                <div class="flex items-center gap-x-5">
+                    <div>
+                        <img src="assets/mainPage/mess-icon-2.png" alt="director">
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <div class="flex gap-x-4">
+                            <img src="assets/mainPage/disainer-1.png" alt="designer">
+                            <img src="assets/mainPage/front-1.png" alt="frontend">
+                            <img src="assets/mainPage/test.png" alt="tester">
+                            <img src="assets/mainPage/dis-2.png" alt="designer">
+                        </div>
+                        <div class="flex gap-x-4">
+                            <img src="assets/mainPage/back-1.png" alt="backend">
+                            <img src="assets/mainPage/mess-icon-1.png" alt="analyst">
+                            <img src="assets/mainPage/front-2.png" alt="frontend">
+                            <img src="assets/mainPage/back-2.png" alt="backend">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <div>
-                    <img src="assets/mainPage/mess-icon-2" alt="director">
-                </div>
-                <div>
-                    <div>
-                        <img src="" alt="designer">
-                        <img src="" alt="frontend">
-                        <img src="" alt="tester">
-                        <img src="" alt="designer">
-                    </div>
-                    <div>
-                        <img src="" alt="backend">
-                        <img src="" alt="analyst">
-                        <img src="" alt="frontend">
-                        <img src="" alt="backend">
-                    </div>
-                </div>
 
-            </div>
         </footer>
 
     </div>

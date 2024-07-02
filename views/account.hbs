@@ -17,15 +17,140 @@
         <div class="container mx-auto pt-5">
             {{> header}}
 
-            <div class="mt-[138px] h-[238px] w-full bg-white border border-stroke rounded-[20px] shadow-cards relative">
-                <div class="flex justify-center flex-col items-center h-full w-[540px] text-white bg-main-yellow border border-white rounded-[20px] absolute right-0 ">
+            <div class="account-form mt-[138px] mb-10 h-[238px] w-full bg-white border border-stroke rounded-[20px] shadow-cards text-black-two relative">
+                <div class="flex justify-center flex-col items-center h-full w-[540px] text-white bg-main-yellow border border-white rounded-[20px] absolute right-0">
                     <div>
                         <p class="text-3xl mb-[18px]">Ваша скидка: <span>10%</span></p>
                         <p class="text-xl mb-[38px]">Сумма заказов: <span>5675</span> ₽*</p>
                         <p class="text-[16px] text-black">*До скидки <span>15%</span> не хватает покупок на сумму: <span>1255</span> ₽</p>
                     </div>
                 </div>
-                <div class="card-content mt-[35px] mb-[30px] mx-[141px]">hello</div>
+                <div class="card-content flex mt-[35px] mb-[30px] mx-[120px]">
+                    <div class="mr-5">
+                        <img src="assets/account/avatar.jfif" alt="avatar" class="size-[119px] rounded-full object-cover mb-5">
+                        <label for="file-upload" class="relative flex justify-center items-center bg-main-yellow w-[120px] h-[35px] rounded-[25px]
+                            hover:bg-main-yellow-hover duration-300">
+                            <span class="absolute text-base text-white font-black">Изменить</span>
+                            <input type="file" name="file-upload" accept="image/png, image/jpeg" class="opacity-0">
+                        </label>
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p class="text-[40px] h-[49px] font-black">Иван Иванов</p>
+                        <p class="text-xl">ivan.ivanov@gmail.com</p>
+                        <div id="logCont" class="opacity-0">
+                            <span>логин:</span>
+                            <input id="logField" type="password" placeholder="" class="text-2xl ml-1 outline-none">
+                        </div>
+                        <div id="passCont" class="opacity-0">
+                            <span>Пароль:</span>
+                            <input id="passField" type="password" placeholder="" class="text-2xl ml-1 outline-none">
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-between items-end w-[344.2px]">
+                        <button id="editAccount" class="mr-[46px] mt-4"><img src="assets/account/edit.png" alt=""></button>
+                        <div class="buttons opacity-0">
+                            <button id="confirm" class="bg-main-yellow w-[161px] h-[37px] rounded-[25px] text-white text-xl font-semibold hover:bg-main-yellow-hover duration-300">принять</button>
+                            <button id="cancel" class="bg-main-yellow w-[161px] h-[37px] rounded-[25px] text-white text-xl font-semibold hover:bg-main-yellow-hover duration-300 ml-[18px]">отменить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="orders text-xl h-[568px] w-full mb-[50px] bg-white border border-stroke rounded-[20px] shadow-cards text-black-two">
+                <div class="orders-content flex flex-col mt-[60px] mb-[73px] mx-[120px]">
+                    <p class="font-normal text-3xl mb-[82px]">Мои заказы</p>
+                    <p class="text-right font mb-[50px]">Дата доставки: <span>03.08.2021</span></p>
+                    <div class="w-[1249px] mx-auto mb-[49px]">
+                        <table class="text-left w-full">
+                            <thead class="text-black-two">
+                                <tr>
+                                    <th class="font-normal pb-[18px]">Товаров:</th>
+                                    <th class="font-normal pb-[18px]">Сумма заказа:</th>
+                                    <th class="font-normal pb-[18px]">Скидка (<span>10%</span>):</th>
+                                    <th class="font-normal pb-[18px]">Сумма заказа:</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-grayText">
+                                <tr>
+                                    <td class="pt-[10px]">2 х Книжка такого то автора</td>
+                                    <td class="pt-[10px]">480 ₽</td>
+                                    <td class="pt-[10px]">48 ₽ </td>
+                                    <td class="pt-[10px]">432 ₽ </td>
+                                </tr>
+                                <tr>
+                                    <td class="pt-[10px]">1 х Книжка автора</td>
+                                    <td class="pt-[10px]">480 ₽</td>
+                                    <td class="pt-[10px]">48 ₽ </td>
+                                    <td class="pt-[10px]">432 ₽ </td>
+                                </tr>
+                            </tbody>
+                        </table>    
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <button class="bg-main-yellow w-[520px] h-[70px] rounded-[25px] text-white text-[25px] font-black hover:bg-main-yellow-hover duration-300">книга пришла</button>
+                        <div class="flex flex-col text-grayText text-lg">
+                            <p>Сумма заказа: <span>864 ₽</span></p>
+                            <p>Доставка: <span>350 ₽</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="old-orders text-xl h-[568px] w-full mb-[50px] bg-white border border-stroke rounded-[20px] shadow-cards text-black-two">
+                <div class="orders-content flex flex-col mt-[60px] mb-[73px] mx-[120px]">
+                    <p class="font-normal text-3xl mb-[82px]">Мои заказы</p>
+                    <p class="text-right font mb-[50px]">Дата доставки: <span>03.08.2021</span></p>
+                    <div class="w-[1249px] mx-auto mb-[49px]">
+                        <table class="text-left w-full">
+                            <thead class="text-black-two">
+                                <tr>
+                                    <th class="font-normal pb-[18px]">Товаров:</th>
+                                    <th class="font-normal pb-[18px]">Сумма заказа:</th>
+                                    <th class="font-normal pb-[18px]">Скидка (<span>10%</span>):</th>
+                                    <th class="font-normal pb-[18px]">Сумма заказа:</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-grayText">
+                                <tr>
+                                    <td class="pt-[10px]">2 х Книжка такого то автора</td>
+                                    <td class="pt-[10px]">480 ₽</td>
+                                    <td class="pt-[10px]">48 ₽ </td>
+                                    <td class="pt-[10px]">432 ₽ </td>
+                                </tr>
+                                <tr>
+                                    <td class="pt-[10px]">1 х Книжка автора</td>
+                                    <td class="pt-[10px]">480 ₽</td>
+                                    <td class="pt-[10px]">48 ₽ </td>
+                                    <td class="pt-[10px]">432 ₽ </td>
+                                </tr>
+                            </tbody>
+                        </table>    
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <button class="bg-button-confirm w-[520px] h-[70px] rounded-[25px] text-white text-[25px] font-black duration-300">Принято</button>
+                        <div class="flex flex-col text-grayText text-lg">
+                            <p>Сумма заказа: <span>864 ₽</span></p>
+                            <p>Доставка: <span>350 ₽</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="text-3xl text-white mb-[40px]">Персональные акции</h2>
+            <div class="sales flex gap-5 mb-[113px]">
+                <div class="sale-card h-[449px] bg-[url('/assets/account/sale1.jfif')] object-fill rounded-[20px] brightness-[0.8]">
+                    <p class="text-3xl font-normal text-white mt-[216px]">Купи 3 книги<br> и получи 4-ую в подарок!</p>
+                    <p class="text-xl font-normal text-white mt-[95px] ml-5">Срок акции: до <span>31.08.2021</span></p>
+                </div>
+                <div class="sale-card h-[449px] bg-[url('/assets/account/sale2.jfif')] object-fill rounded-[20px] brightness-[0.8]">
+                    <p class="text-3xl font-normal text-white mt-[216px]">Купи 3 книги<br> и получи 4-ую в подарок!</p>
+                    <p class="text-xl font-normal text-white mt-[95px] ml-5">Срок акции: до <span>31.08.2021</span></p>
+                </div>
+                <div class="sale-card h-[449px] bg-[url('/assets/account/sale3.jfif')] object-fill rounded-[20px] brightness-[0.8]">
+                    <p class="text-3xl font-normal text-white mt-[216px]">Купи 3 книги<br> и получи 4-ую в подарок!</p>
+                    <p class="text-xl font-normal text-white mt-[95px] ml-5">Срок акции: до <span>31.08.2021</span></p>
+                </div>
+                    <div class="sale-card h-[449px] bg-[url('/assets/account/sale4.jfif')] object-fill rounded-[20px] brightness-[0.8]">
+                    <p class="text-3xl font-normal text-white mt-[216px]">Купи 3 книги<br> и получи 4-ую в подарок!</p>
+                    <p class="text-xl font-normal text-white mt-[95px] ml-5">Срок акции: до <span>31.08.2021</span></p>
+                </div>
             </div>
         </div>
         {{> secondFooter}}

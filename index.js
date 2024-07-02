@@ -52,9 +52,9 @@ app.get(`/auth`, (req, res)=>{
   });
 })
 
-app.get(`/error_404`, (req, res) => {
-  res.render(`error_404`)
-})
+// app.get(`/error_404`, (req, res) => {
+//   res.render(`error_404`)
+// })
 
 app.get(`/account`, (req, res)=>{
   res.render(`account`, {
@@ -75,3 +75,8 @@ app.get(`/account/`, (req, res)=>{
     }
   })
 })
+
+//на любой несуществующий путь рендер 404 страницы
+app.all('*', (req, res) => {
+  res.status(404).render(`error_404`);
+});

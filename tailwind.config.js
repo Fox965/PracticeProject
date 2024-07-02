@@ -6,9 +6,24 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        screens: {
+          mb: '375px',  //ширина под мобилки (прямо как в нашем дизайне)
+          sm: '640px',  
+          md: '768px',  
+          lg: '1024px', 
+          xl: '1280px', 
+          '2xl': '1536px',
+	        '3xl': '1660px',  //изменил под десктопы, чтобы хоть как-то под размеры макета попасть
+        },
+      },
       colors:{
         'stroke': '#E4E4E4',
         'main-yellow': '#F9B300',
+        'main-yellow-hover': '#FA9E22',
+        'black-two': '#222222',
+        'grayText': '#747474',
+        'button-confirm': '#333332',
       },
       fontFamily: {
         'main': 'Montserrat',

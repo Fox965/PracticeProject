@@ -8,6 +8,15 @@
     }
 }
 
+@layer components {
+    .button-style-1 {
+        @apply font-black text-2xl text-center text-white bg-[#F9B300] duration-300;
+    }
+    .button-style-1:hover {
+        @apply hover:bg-[#FA9E22];
+    }
+}
+
 .main-background {
     background-image: linear-gradient(#F5C343 0, #FA9E22 25%, #360802 50%, #000 93%);
 }

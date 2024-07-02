@@ -1,7 +1,3 @@
-document.querySelector(`#user-button`).addEventListener(`click`, () => {
-    document.querySelector(`#hidden-user`).classList.toggle(`hidden`);
-})
-
 let enterForm = document.querySelector(`#enterForm`);
 let regForm = document.querySelector(`#regForm`);
 let enterButton = document.querySelector(`#enterButton`);

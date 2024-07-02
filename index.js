@@ -52,6 +52,10 @@ app.get(`/auth`, (req, res)=>{
   });
 })
 
+app.get(`/error_404`, (req, res) => {
+  res.render(`error_404`)
+})
+
 app.get(`/account`, (req, res)=>{
   res.render(`account`, {
     nav: nav,

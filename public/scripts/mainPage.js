@@ -1,7 +1,3 @@
-document.querySelector(`#user-button`).addEventListener(`click`, () => {
-    document.querySelector(`#hidden-user`).classList.toggle(`hidden`);
-})
-
 // SLIDER
 const slides = document.querySelectorAll(`.slide`);
 let count = 5;
@@ -37,8 +33,8 @@ function handleScroll() {
         }
     });
 
-    const moveableElements = document.querySelectorAll('.back-image');
-    moveableElements.forEach(element => {
+    const moveElements = document.querySelectorAll('.back-image');
+    moveElements.forEach(element => {
         const startTop = parseInt(element.getAttribute('data-start-top'));
         const startRight = parseInt(element.getAttribute('data-start-right'));
         const startLeft = parseInt(element.getAttribute('data-start-left'));
@@ -48,9 +44,9 @@ function handleScroll() {
 
         if (isVisibleBackImage) {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const newTop = startTop + scrollTop * 0.5; // Изменяйте множитель для скорости движения
-            const newRight = startRight - scrollTop * 0.3; // Изменяйте множитель для скорости движения
-            const newLeft = startLeft - scrollTop * 0.3; // Изменяйте множитель для скорости движения
+            const newTop = startTop + scrollTop * 0.5;
+            const newRight = startRight - scrollTop * 0.3;
+            const newLeft = startLeft - scrollTop * 0.3;
 
             if (startTop !== undefined) {
                 element.style.top = `${newTop}px`;

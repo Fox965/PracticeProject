@@ -30,7 +30,8 @@ let nav = [
   {name: "Главная",  url: "/" },
   {name: "Контакты", url: "/contacts"},
   {name: "О сервисе", url: "/about" },
-  {name: "Каталог", url: "/catalogue" }
+  {name: "Каталог", url: "/catalogue" },
+  {name: "Сотрудничество", url: "/predlozhka" }
 ]
 
 // ВРЕМЕННОЕ ЗАПОЛНЕНИЕ КАТАЛОГА, ЗАМЕНЯЕТСЯ МАССИВОМ ИЗ БАЗЫ ДАННЫХ
@@ -38,7 +39,7 @@ const catalogue = []
 for (let i = 0; i < 16; i++)
   catalogue.push({id: i, name: "Книжка", image: "/assets/mainPage/slide-1.png", price: 9999});
 
-app.get(`/`, function(req, res){
+app.get(`/`, (req, res) => {
   res.render(`index`, {
     nav: nav,
     user: {
@@ -48,7 +49,7 @@ app.get(`/`, function(req, res){
   })
 })
 
-app.get(`/catalogue`, function(req, res){
+app.get(`/catalogue`, (req, res) => {
   res.render(`catalogue`, {
     nav: nav,
     user: {
@@ -72,6 +73,17 @@ app.post('/search', (req, res) => {
   console.log('Результат поиска:', requestSearch);
   res.json({ success: true, message: `Результат поиска: ${requestSearch}` });
 });
+
+app.get(`/contacts`, (req, res) => {
+  res.render(`contacts`, {
+    nav: nav,
+    user: {
+      user: `random`,
+      id: 0
+    },
+    cards: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  })
+})
 
 app.get(`/auth`, (req, res)=>{
   res.render(`auth`, {

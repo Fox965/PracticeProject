@@ -17,6 +17,30 @@
     }
 }
 
+@layer components {
+    .dropdown {
+        @apply bg-black border-white border border-solid text-[#F9B300];
+    }
+}
+
+@layer components {
+    .search-button {
+        @apply px-3 duration-200;
+    }
+
+    .search-button > * {
+        @apply text-[#343434];
+    }
+
+    .search-button:hover {
+        @apply bg-black;
+    }
+
+    .search-button:hover > * {
+        @apply text-[#F9B300];
+    }
+}
+
 .main-background {
     background-image: linear-gradient(#F5C343 0, #FA9E22 25%, #360802 50%, #000 93%);
 }
@@ -100,3 +124,4 @@
         transform: translateY(0);
     }
 }
+

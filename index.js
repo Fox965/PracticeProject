@@ -19,6 +19,7 @@ app.set('view engine', 'hbs')
 
 let bodyParser = require(`body-parser`)
 let urlencodedParser = bodyParser.urlencoded({ extended: false })
+app.use(bodyParser.json());
 
 let port = 3001
 app.listen(port, function(){
@@ -29,8 +30,13 @@ let nav = [
   {name: "Главная",  url: "/" },
   {name: "Контакты", url: "/contacts"},
   {name: "О сервисе", url: "/about" },
-  {name: "Каталог", url: "/catalog" }
+  {name: "Каталог", url: "/catalogue" }
 ]
+
+// ВРЕМЕННОЕ ЗАПОЛНЕНИЕ КАТАЛОГА, ЗАМЕНЯЕТСЯ МАССИВОМ ИЗ БАЗЫ ДАННЫХ
+const catalogue = []
+for (let i = 0; i < 16; i++)
+  catalogue.push({id: i, name: "Книжка", image: "/assets/mainPage/slide-1.png", price: 9999});
 
 app.get(`/`, function(req, res){
   res.render(`index`, {
@@ -41,6 +47,31 @@ app.get(`/`, function(req, res){
     }
   })
 })
+
+app.get(`/catalogue`, function(req, res){
+  res.render(`catalogue`, {
+    nav: nav,
+    user: {
+      user: `random`,
+      id: 0
+    },
+    catalogue: catalogue
+  })
+})
+
+//ОБРАБОТКА АСИНХРОННОГО ЗАПРОСА ЖАНРА
+app.post('/select-genre', (req, res) => {
+  const genre = req.body.genre;
+  console.log('Selected genre:', genre);
+  res.json({ success: true, message: `Selected genre: ${genre}` });
+});
+
+//ОБРАБОТКА АСИНХРОННОГО ЗАПРОСА ПОИСКА
+app.post('/search', (req, res) => {
+  const requestSearch = req.body.valueForm;
+  console.log('Результат поиска:', requestSearch);
+  res.json({ success: true, message: `Результат поиска: ${requestSearch}` });
+});
 
 app.get(`/auth`, (req, res)=>{
   res.render(`auth`, {

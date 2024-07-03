@@ -6,7 +6,6 @@
     <nav class="flex gap-x-5 list-none text-2xl">
 
         <!--МЕНЮ-->
-
         {{#each nav}}
 
             <li>
@@ -29,7 +28,7 @@
                 <path d="M14.0408 1L7.23689 8.52066L1 1" stroke="black" stroke-width="0.5"/>
             </svg>
         </div>
-        <div id="hidden-user" class="absolute hidden border-white borders-1 border-solid bg-black px-3 py-14 list-none z-10 top-20 right-0">
+        <div id="hidden-user" class="absolute hidden dropdown px-3 py-14 list-none z-10 top-20 right-0">
             {{#if user.user}}
                 {{#ifCond user.user '===' "admin"}}
                     <li class="text-[#F9B300] text-lg font-medium">

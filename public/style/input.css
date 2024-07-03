@@ -10,16 +10,16 @@
 
 @layer components {
     .button-style-1 {
-        @apply font-black text-2xl text-center text-white bg-[#F9B300] duration-300;
+        @apply font-black text-2xl text-center text-white bg-main-yellow duration-300;
     }
     .button-style-1:hover {
-        @apply hover:bg-[#FA9E22];
+        @apply hover:bg-main-yellow-hover;
     }
 }
 
 @layer components {
     .dropdown {
-        @apply bg-black border-white border border-solid text-[#F9B300];
+        @apply bg-black border-white border border-solid text-main-yellow;
     }
 }
 
@@ -37,7 +37,7 @@
     }
 
     .search-button:hover > * {
-        @apply text-[#F9B300];
+        @apply text-main-yellow;
     }
 }
 

@@ -17,7 +17,7 @@
     </nav>
 
     <div class="flex gap-x-11 relative">
-        <a href="account/korzina" class="flex-center w-[70px] h-[70px] bg-gradient-to-b from-[#6183DD] to-[#344777] rounded-full">
+        <a href="/korzina" class="flex-center w-[70px] h-[70px] bg-gradient-to-b from-[#6183DD] to-[#344777] rounded-full">
             <img src="assets/basket-icon.svg" alt="basket">
         </a>
         <div id="user-button" class="flex gap-6 items-center cursor-pointer">
@@ -31,25 +31,25 @@
         <div id="hidden-user" class="absolute hidden dropdown px-3 py-14 list-none z-10 top-20 right-0">
             {{#if user.user}}
                 {{#ifCond user.user '===' "admin"}}
-                    <li class="text-[#F9B300] text-lg font-medium">
+                    <li class="text-main-yellow text-lg font-medium">
                         <a href="/account">личный кабинет</a>
                     </li>
-                    <li class="text-[#F9B300] text-lg font-medium">
+                    <li class="text-main-yellow text-lg font-medium">
                         <a href="/admin">админ панель</a>
                     </li>
-                    <li class="text-[#F9B300] text-lg font-medium">
+                    <li class="text-main-yellow text-lg font-medium">
                         <a href="/auth">выйти</a>
                     </li>
                 {{else}}
-                    <li class="text-[#F9B300] text-lg font-medium">
+                    <li class="text-main-yellow text-lg font-medium">
                         <a href="/account">личный кабинет</a>
                     </li>
-                    <li class="text-[#F9B300] text-lg font-medium">
+                    <li class="text-main-yellow text-lg font-medium">
                         <a href="/auth">выйти</a>
                     </li>
                 {{/ifCond}}
             {{else}}
-                <li class="text-[#F9B300] text-lg font-medium">
+                <li class="text-main-yellow text-lg font-medium">
                     <a href="/auth">Войти</a>
                 </li>
             {{/if}}

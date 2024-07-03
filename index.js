@@ -12,7 +12,7 @@ require('./hbsRegister/hbsRegister');
 let express = require(`express`)
 let app = express()
 
-app.use(express.static(`public`))
+app.use(express.static(`public`));
 
 app.set('views', 'views')
 app.set('view engine', 'hbs')
@@ -21,7 +21,7 @@ let bodyParser = require(`body-parser`)
 let urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.use(bodyParser.json());
 
-let port = 3001
+let port = 3001;
 app.listen(port, function(){
   console.log(`http://localhost:${port}/`)
 })
@@ -37,7 +37,16 @@ let nav = [
 // ВРЕМЕННОЕ ЗАПОЛНЕНИЕ КАТАЛОГА, ЗАМЕНЯЕТСЯ МАССИВОМ ИЗ БАЗЫ ДАННЫХ
 const catalogue = []
 for (let i = 0; i < 16; i++)
-  catalogue.push({id: i, name: "Книжка", image: "/assets/mainPage/slide-1.png", price: 9999});
+  catalogue.push(
+      {
+        name: "Книжка",
+        image: "/assets/book/imageBook.png",
+        author: "автор",
+        genre: "жанр",
+        price: 9999,
+        pages: 200
+      }
+  );
 
 app.get(`/`, (req, res) => {
   res.render(`index`, {
@@ -85,6 +94,18 @@ app.get(`/contacts`, (req, res) => {
   })
 })
 
+app.get(`/book`, (req, res) => {
+  let bookId = req.query.id
+  res.render(`book`, {
+    nav: nav,
+    user: {
+      user: `random`,
+      id: 0
+    },
+    book: catalogue[Number(bookId)]
+  })
+})
+
 app.get(`/auth`, (req, res)=>{
   res.render(`auth`, {
     nav: nav,
@@ -104,7 +125,7 @@ app.get(`/account`, (req, res)=>{
   })
 })
 
-app.get(`/account/korzina`, (req, res)=>{
+app.get(`/korzina`, (req, res)=>{
   res.render(`korzina`, {
     nav: nav,
     user: {

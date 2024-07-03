@@ -94,11 +94,6 @@ app.get(`/auth`, (req, res)=>{
     }
   });
 })
-
-// app.get(`/error_404`, (req, res) => {
-//   res.render(`error_404`)
-// })
-
 app.get(`/account`, (req, res)=>{
   res.render(`account`, {
     nav: nav,
@@ -109,8 +104,8 @@ app.get(`/account`, (req, res)=>{
   })
 })
 
-app.get(`/account/`, (req, res)=>{
-  res.render(`account`, {
+app.get(`/account/korzina`, (req, res)=>{
+  res.render(`korzina`, {
     nav: nav,
     user: {
       user: `random`,

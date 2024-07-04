@@ -114,6 +114,10 @@
     animation: animeMessage .5s ease-in forwards;
 }
 
+.card-predlozhka {
+    animation: anineCard .5s ease-out forwards;
+}
+
 @keyframes animeMessage {
     0% {
         opacity: 0;
@@ -122,6 +126,17 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes anineCard {
+    0% {
+        opacity: 0;
+        transform: translateY(-35%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%);
     }
 }
 

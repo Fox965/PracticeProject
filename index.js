@@ -106,6 +106,17 @@ app.get(`/book`, (req, res) => {
   })
 })
 
+app.get(`/predlozhka`, (req, res) => {
+  res.render(`predlozhka`, {
+    nav: nav,
+    user: {
+      user: `random`,
+      id: 0
+    },
+
+  })
+})
+
 app.get(`/auth`, (req, res)=>{
   res.render(`auth`, {
     nav: nav,

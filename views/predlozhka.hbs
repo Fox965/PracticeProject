@@ -13,8 +13,50 @@
     <script src="scripts/predlozhka.js" defer></script>
 </head>
 <body class="font-main">
-<div id="blur" class="hidden fixed w-full h-full left-0 top-0 z-10 bg-[#050505] opacity-60"></div>
-<div class="main-background relative">
+<div id="application-form" class="absolute z-20 -translate-x-2/4 bg-white p-[17px_50px_44px_132px] rounded-[25px] max-w-[873px] w-full hidden">
+    <div class="flex justify-between items-center">
+        <div class=""></div>
+        <h1 class="text-center text-[28px] text-[#4B4844] font-bold self-center">
+            Оставьте заявку <br> на добавление товара
+        </h1>
+        <button id="close-btn">
+            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L28 28M28 1L1 28" stroke="#959595"/>
+            </svg>
+        </button>
+    </div>
+    <div class="mt-[71px]">
+        <form action="">
+            <div class="flex gap-x-[78px]">
+                <div class="flex flex-col gap-y-9 max-w-[350px] w-full">
+                    <input type="text" placeholder="Автор" class="border-b border-solid border-[#D1D1D1] outline-none">
+                    <input type="text" placeholder="Жанр" class="border-b border-solid border-[#D1D1D1] outline-none">
+                    <input type="text" placeholder="Предлогаемая стоимость" class="border-b border-solid border-[#D1D1D1] outline-none">
+                    <input type="text" placeholder="название книги" class="border-b border-solid border-[#D1D1D1] outline-none">
+                    <input type="text" placeholder="кол-во страниц" class="border-b border-solid border-[#D1D1D1] outline-none">
+                    <input type="email" placeholder="мыло" class="border-b border-solid border-[#D1D1D1] outline-none">
+                </div>
+                <div>
+                    <div class="max-w-[188px] w-full">
+                        <img src="/assets/book/imageBook.png" data-prev-src="/assets/book/imageBook.png" alt="обложка" id="previewImage" class="w-full h-auto rounded-[25px]">
+                    </div>
+                    <div class="relative overflow-hidden mt-[60px]">
+                        <div class="bg-[#F3F3F3] rounded-full pl-2.5">
+                            <span class="text-[#C9C9C9]">обложка</span>
+                            <label for="imageInput" class="inline-block relative z-20 button-style-1 rounded-full h-full py-4 px-2.5  text-base cursor-pointer">Добавить</label>
+                            <input id="imageInput" type="file" accept="image/*" class="absolute left-0 top-0 opacity-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="button-style-1 mt-9 mx-auto rounded-full py-4 px-10 text-lg font-extrabold uppercase">
+                отсавить заявку
+            </button>
+        </form>
+    </div>
+</div>
+<div id="darkening" class="hidden fixed w-full h-full left-0 top-0 z-10 bg-[#050505] opacity-60"></div>
+<div id="blur" class="main-background relative">
     <div class="container mx-auto pt-5">
         {{> header}}
 
@@ -52,49 +94,6 @@
             <div class="py-8 px-16 bg-[#F6F6F6] border border-solid border-[#D6D6D6] rounded-[25px]">
                 <h2 class="text-[32px] font-bold">Отзывы и рейтинги:</h2>
                 <p class="text-2xl font-medium text-main-yellow">Книга должна иметь положительные отзывы и высокие оценки от критиков и читателей.</p>
-            </div>
-        </div>
-
-        <div id="application-form" class="absolute z-20 -translate-x-2/4 bg-white p-[17px_50px_44px_132px] rounded-[25px] max-w-[873px] w-full hidden">
-            <div class="flex justify-between items-center">
-                <div class=""></div>
-                <h1 class="text-center text-[28px] text-[#4B4844] font-bold self-center">
-                    Оставьте заявку <br> на добавление товара
-                </h1>
-                <button id="close-btn">
-                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L28 28M28 1L1 28" stroke="#959595"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="mt-[71px]">
-                <form action="">
-                    <div class="flex gap-x-[78px]">
-                        <div class="flex flex-col gap-y-9 max-w-[350px] w-full">
-                            <input type="text" placeholder="Автор" class="border-b border-solid border-[#D1D1D1] outline-none">
-                            <input type="text" placeholder="Жанр" class="border-b border-solid border-[#D1D1D1] outline-none">
-                            <input type="text" placeholder="Предлогаемая стоимость" class="border-b border-solid border-[#D1D1D1] outline-none">
-                            <input type="text" placeholder="название книги" class="border-b border-solid border-[#D1D1D1] outline-none">
-                            <input type="text" placeholder="кол-во страниц" class="border-b border-solid border-[#D1D1D1] outline-none">
-                            <input type="email" placeholder="мыло" class="border-b border-solid border-[#D1D1D1] outline-none">
-                        </div>
-                        <div>
-                            <div class="max-w-[188px] w-full">
-                                <img src="/assets/book/imageBook.png" data-prev-src="/assets/book/imageBook.png" alt="обложка" id="previewImage" class="w-full h-auto rounded-[25px]">
-                            </div>
-                            <div class="relative overflow-hidden mt-[60px]">
-                                <div class="bg-[#F3F3F3] rounded-full pl-2.5">
-                                    <span class="text-[#C9C9C9]">обложка</span>
-                                    <label for="imageInput" class="inline-block relative z-20 button-style-1 rounded-full h-full py-4 px-2.5  text-base cursor-pointer">Добавить</label>
-                                    <input id="imageInput" type="file" accept="image/*" class="absolute left-0 top-0 opacity-0">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="button-style-1 mt-9 mx-auto rounded-full py-4 px-10 text-lg font-extrabold uppercase">
-                        отсавить заявку
-                    </button>
-                </form>
             </div>
         </div>
 

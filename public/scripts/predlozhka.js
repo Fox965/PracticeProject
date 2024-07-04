@@ -1,12 +1,14 @@
 const applicationBtn = document.querySelector('#application-btn');
 const applicationForm = document.querySelector('#application-form');
+const darkening = document.querySelector('#darkening');
 const blurOverlay = document.querySelector('#blur');
 const closeBtn = document.querySelector('#close-btn');
 
 const toggleFormVisibility = () => {
     applicationForm.classList.toggle(`hidden`);
     applicationForm.classList.toggle(`card-predlozhka`);
-    blurOverlay.classList.toggle(`hidden`);
+    darkening.classList.toggle(`hidden`);
+    blurOverlay.classList.toggle(`blur`);
     document.body.classList.toggle(`overflow-hidden`);
 };
 

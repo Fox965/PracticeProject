@@ -1,9 +1,11 @@
-<header class="flex justify-between items-center">
+<header class="flex justify-between items-center w-full">
     <a href="/" class="flex gap-x-4 items-center">
-        <img src="assets/logo.png" alt="logo">
-        <span class="text-3xl leading-10">Book knight</span>
+        <div>
+            <img src="assets/logo.png" alt="logo">
+        </div>
+        <span class="text-xl xl:text-3xl leading-10 hidden lg:inline">Book knight</span>
     </a>
-    <nav class="flex gap-x-5 list-none text-2xl">
+    <nav class="lg:flex gap-x-2 xl:gap-x-5 list-none text-xl xl:text-2xl hidden">
 
         <!--МЕНЮ-->
         {{#each nav}}
@@ -16,7 +18,35 @@
 
     </nav>
 
-    <div class="flex gap-x-11 relative">
+    <!--МОБИЛЬНОЕ МЕНЮ-->
+    <div id="burger" class="lg:hidden cursor-pointer absolute z-50 top-[35px] right-[31px]">
+        <div id="bar-1" class="w-[25px] h-[2px] bg-[#343434] my-2 transition-[.4s]"></div>
+        <div id="bar-2" class="w-[25px] h-[2px] bg-[#343434] my-2 transition-[.4s]"></div>
+        <div id="bar-3" class="w-[25px] h-[2px] bg-[#343434] my-2 transition-[.4s]"></div>
+    </div>
+    <nav id="mobile-menu" class="lg:hidden absolute z-10 flex flex-col gap-y-3 list-none top-0 right-0 translate-x-full transition-transform duration-300 ease-in-out h-screen bg-white pt-24 pl-5 pr-8 text-lg text-[#4B4844]">
+        {{#each nav}}
+
+            <li>
+                <a href="{{this.url}}">{{this.name}}</a>
+            </li>
+
+        {{/each}}
+        <li>
+            <a href="/korzina">Корзина</a>
+        </li>
+        {{#if user.user}}
+            <li>
+                <a href="/account">Профиль</a>
+            </li>
+        {{else}}
+            <li>
+                <a href="/auth">Профиль</a>
+            </li>
+        {{/if}}
+    </nav>
+
+    <div class="lg:flex gap-x-5 xl:gap-x-11 relative hidden">
         <a href="/korzina" class="flex-center w-[70px] h-[70px] bg-gradient-to-b from-[#6183DD] to-[#344777] rounded-full">
             <img src="assets/basket-icon.svg" alt="basket">
         </a>

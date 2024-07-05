@@ -10,10 +10,7 @@
 
 @layer components {
     .button-style-1 {
-        @apply font-black text-2xl text-center text-white bg-main-yellow duration-300;
-    }
-    .button-style-1:hover {
-        @apply hover:bg-main-yellow-hover;
+        @apply font-black text-center text-white bg-main-yellow duration-300 lg:hover:bg-main-yellow-hover;
     }
 }
 
@@ -39,6 +36,10 @@
     .search-button:hover > * {
         @apply text-main-yellow;
     }
+}
+
+body {
+    overflow-x: hidden;
 }
 
 .main-background {

@@ -12,6 +12,9 @@
     .button-style-1 {
         @apply font-black text-center text-white bg-main-yellow duration-300 lg:hover:bg-main-yellow-hover;
     }
+    .button-style-1:hover {
+        @apply hover:bg-main-yellow-hover;
+    }
 }
 
 @layer components {
@@ -36,6 +39,22 @@
     .search-button:hover > * {
         @apply text-main-yellow;
     }
+}
+
+.gradient-text {
+    background-image: linear-gradient(to right, #FF0000 0%, #FF6B00 15%, #FFD600 30%, #52FF00 46%, #00FFF0 59%, #0029FF 74%, #EB05FF 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hidden-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hidden-scroll::-webkit-scrollbar {
+    display: none;
 }
 
 @layer components {

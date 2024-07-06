@@ -46,7 +46,7 @@
                                 <input id="passField" type="password" placeholder="Пароль" class="text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-10 w-[511px] border-b">
                                 <div id="showPass" class="cursor-pointer text-transparent size-[37px] absolute -top-4 right-0 bg-[url('/assets/auth/eye-close.png')]"></div>
                             </div>
-                            <button>Войти</button>
+                            <button id="enterSystem">Войти</button>
                         </form>
                         <button id="regButton">Регистрация</button>
                     </div>
@@ -65,7 +65,7 @@
                                     <div id="showRegPass" class="cursor-pointer text-transparent size-[37px] absolute -top-4 right-0 bg-[url('/assets/auth/eye-close.png')]"></div>
                                 </div>
                             </div>
-                            <button class="mt-10">Зарегистрироваться</button>
+                            <button id="regSystem" class="mt-10">Зарегистрироваться</button>
                         </form>
                         <button id="enterButton">Войти</button>
                     </div>
@@ -74,7 +74,6 @@
             </div>
         </div>
         <img src="assets/auth/waves.png" alt="waves" class="w-full">
-        
         {{> thirdFooter}}
     </div>
 </body>

@@ -12,6 +12,19 @@ let showRegPass = document.querySelector(`#showRegPass`);
 let passRegField = document.querySelector(`#passRegField`);
 let passRegRepeatField = document.querySelector(`#passRegRepeatField`);
 
+let enterSystem = document.querySelector(`#enterSystem`);
+let regSystem = document.querySelector(`#regSystem`);
+
+enterSystem.addEventListener(`click`, ()=>{
+    alert(`НЕВЕРНЫЙ ЛОГИН ИЛИ ПАРОЛЬ!`);
+})
+
+regSystem.addEventListener(`click`, ()=>{
+    enterForm.classList.add(`hidden`);
+    regForm.classList.remove(`hidden`);
+    titleNode.innerHTML = `Регистрация`;
+})
+
 regButton.addEventListener(`click`, ()=>{
     enterForm.classList.add(`hidden`);
     regForm.classList.remove(`hidden`);

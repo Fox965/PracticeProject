@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">PREDLOZHKA</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="style/output.css" rel="stylesheet">
+    {{!-- <script src="scripts/index.js" defer></script> --}}
+    <script src="scripts/proposal.js" defer></script>
+</head>
+<body class="font-roboto bg-gray-600">
+    <div class="flex justify-center items-center h-screen container mx-auto text-black-two">
+        <div class="container-content flex justify-center items-center w-full">
+            <div class="flex w-[1295px] h-[900px] bg-white">
+                <aside class="w-[235px] h-full bg-admin-aside text-admin-text">
+                    <div class="ml-8 mr-[37px]">
+                        <div class="flex items-center w-full mt-10 mb-[71.26px]">
+                            <img class="size-[39px] rounded-full object-cover" src="{{user.avatar}}" alt="avatarAdmin">
+                            <p class="text-xl ml-[9px]">{{user.nick}}</p>
+                        </div>
+                        <a href="/main" class="flex items-center text-base font-normal w-[166px] h-12 mb-2">
+                            <img class="ml-3" src="assets/mainAdmin/House.svg" alt="house">
+                            <p class="ml-3 hover:underline">General</p>
+                        </a>
+                        <a href="/proposal" class="flex items-center text-base text-white font-bold w-[166px] h-12 bg-ref-admin rounded-[10px] hover:bg-opacity-80 ">
+                            <img class="ml-3" src="assets/mainAdmin/Users-white.svg" alt="users">
+                            <p class="ml-3">PREDLOZHKA</p>
+                        </a>
+                        <a href="/admin" class="flex items-center text-base font-normal w-[166px] h-12 mt-[536px]">
+                            
+                            <img class="ml-3" src="assets/mainAdmin/SignOut.svg" alt="SignOut">
+                            <p class="ml-3 hover:underline">Sign out</p>
+                        </a>
+                    </div>
+                </aside>
+                <div class="w-full h-full font-bold text-black overflow-y-scroll hidden-scroll">
+                    <div id="scrollZone" class="mx-auto w-[733px] flex flex-col">
+                        {{#each predlozhka}}
+                        <div class="bg-[#D9D9D9] w-full h-[437px] mt-[70px] pl-[44px] pr-[10px] pt-10">
+                            <div class="proposal-content flex justify-between h-[338px]">
+                                <div class="flex flex-col justify-between font-main">
+                                    <input type="text" placeholder="{{this.author}}" class="w-[418px] bg-transparent border-b border-white cursor-pointer outline-none placeholder:text-[#4B4844] placeholder:font-normal placeholder:text-lg placeholder:opacity-50" readonly>
+                                    <input type="text" placeholder="{{this.genre}}" class="w-[418px] bg-transparent border-b border-white cursor-pointer outline-none placeholder:text-[#4B4844] placeholder:font-normal placeholder:text-lg placeholder:opacity-50" readonly>
+                                    <input type="text" placeholder="{{this.price}}" class="w-[418px] bg-transparent border-b border-white cursor-pointer outline-none placeholder:text-[#4B4844] placeholder:font-normal placeholder:text-lg placeholder:opacity-50" readonly>
+                                    <input type="text" placeholder="{{this.name}}" class="w-[418px] bg-transparent border-b border-white cursor-pointer outline-none placeholder:text-[#4B4844] placeholder:font-normal placeholder:text-lg placeholder:opacity-50" readonly>
+                                    <input type="text" placeholder="{{this.pages}}" class="w-[418px] bg-transparent border-b border-white cursor-pointer outline-none placeholder:text-[#4B4844] placeholder:font-normal placeholder:text-lg placeholder:opacity-50" readonly>
+                                    <input type="text" placeholder="{{this.email}}" class="w-[418px] bg-transparent border-b border-white cursor-pointer outline-none placeholder:text-[#4B4844] placeholder:font-normal placeholder:text-lg placeholder:opacity-50" readonly>
+                                </div>
+                                <div class="flex flex-col justify-between">
+                                    <img src="{{this.image}}" alt="PREDLOZHKA" class="w-[188px] h-[168px] object-cover rounded-[25px]">
+                                    <div id="buttonsYesNo" class="flex justify-between font-inter text-2xl text-white">
+                                        <button id="yesButton" class="w-[77px] h-[49px] rounded-full bg-button-admin opacity-80 hover:bg-[#292C74] duration-300">да</button>
+                                        <button id="noButton" class="w-[77px] h-[49px] rounded-full bg-button-admin opacity-80 hover:bg-[#292C74] duration-300">нет</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

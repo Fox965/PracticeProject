@@ -27,28 +27,28 @@
                 </div>
                 <div class="card-content flex mt-[35px] mb-[30px] mx-[120px]">
                     <div class="mr-5">
-                        <img src="assets/account/avatar.jfif" alt="avatar" class="size-[119px] rounded-full object-cover mb-5">
-                        <label for="file-upload" class="relative flex justify-center items-center bg-main-yellow w-[120px] h-[35px] rounded-[25px]
+                        <img src="{{user.avatar}}" alt="avatar" id="avatarImage" class="size-[119px] rounded-full object-cover mb-5">
+                        <label id="avatarButton" for="file-upload" class="relative flex justify-center items-center bg-main-yellow w-[120px] h-[35px] rounded-[25px]
                             hover:bg-main-yellow-hover duration-300">
                             <span class="absolute text-base text-white font-black">Изменить</span>
-                            <input type="file" name="file-upload" accept="image/png, image/jpeg" class="opacity-0">
+                            <input id="imageInput" type="file" name="file-upload" accept="image/png, image/jpeg" class="opacity-0">
                         </label>
                     </div>
                     <div class="flex flex-col justify-between">
-                        <p class="text-[40px] h-[49px] font-black">Иван Иванов</p>
-                        <p class="text-xl">ivan.ivanov@gmail.com</p>
-                        <div id="logCont" class="opacity-0">
+                        <p class="text-[40px] h-[49px] font-black">{{user.nick}} - {{user.role}}</p>
+                        <p class="text-xl">{{user.email}}</p>
+                        <div id="logCont" class="opacity-0 cursor-default">
                             <span>логин:</span>
-                            <input id="logField" type="password" placeholder="" class="text-2xl ml-1 outline-none">
+                            <input id="logField" type="password" placeholder="" class="text-2xl ml-1 outline-none cursor-default" readonly>
                         </div>
-                        <div id="passCont" class="opacity-0">
+                        <div id="passCont" class="opacity-0 cursor-default">
                             <span>Пароль:</span>
-                            <input id="passField" type="password" placeholder="" class="text-2xl ml-1 outline-none">
+                            <input id="passField" type="password" placeholder="" class="text-2xl ml-1 outline-none cursor-default" readonly>
                         </div>
                     </div>
                     <div class="flex flex-col justify-between items-end w-[344.2px]">
                         <button id="editAccount" class="mr-[46px] mt-4"><img src="assets/account/edit.png" alt=""></button>
-                        <div class="buttons opacity-0">
+                        <div class="buttons hidden">
                             <button id="confirm" class="bg-main-yellow w-[161px] h-[37px] rounded-[25px] text-white text-xl font-semibold hover:bg-main-yellow-hover duration-300">принять</button>
                             <button id="cancel" class="bg-main-yellow w-[161px] h-[37px] rounded-[25px] text-white text-xl font-semibold hover:bg-main-yellow-hover duration-300 ml-[18px]">отменить</button>
                         </div>

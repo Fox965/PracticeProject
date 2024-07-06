@@ -19,17 +19,19 @@
 
             {{> header}}
 
-            <div class="flex justify-between mt-[70px] pb-20 relative muzhik">
+            <div class="flex flex-col lg:flex-row justify-center lg:justify-between mt-16 lg:mt-[70px] pb-20 relative muzhik">
                 <div class="mt-44">
-                    <h1 class="max-w-[396px] w-full text-3xl font-black">Твоя книга, твой друг с доставкой на дом!</h1>
-                    <p class="max-w-[420px] w-full mt-6">
+                    <h1 class="lg:max-w-[396px] w-full text-2xl lg:text-3xl font-black">Твоя книга, твой друг с доставкой на дом!</h1>
+                    <p class="hidden lg:block max-w-[420px] w-full mt-6">
                         Онлайн-магазин по продаже книг любого жанра! Купи для себя друга и получи море увлечений до конца его прочтения.
                     </p>
-                    <a href="" class="inline-block text-2xl text-white bg-[#222299] py-2.5 px-5 shadow-[0_4px_60px_0_#160A9F] rounded-full mt-14 font-medium opacity-65 duration-300 hover:opacity-100 hover:bg-[#292C74] hover:duration-300">перейти к покупкам</a>
+                    <a href="/catalogue" class="hidden lg:inline-block text-2xl text-white bg-[#222299] py-2.5 px-5 shadow-[0_4px_60px_0_#160A9F] rounded-full mt-14 font-medium opacity-65 duration-300 hover:opacity-100 hover:bg-[#292C74]">перейти к покупкам</a>
                 </div>
-                <div>
-                    <img src="assets/mainPage/bookSale.png" alt="book">
-                    <button class="inline-block text-2xl bg-[#EC1010] ml-20 px-20 shadow-[0_4px_60px_0_#FF0000] rounded-full mt-16 text-shadow-1 opacity-65 duration-300 hover:bg-[#750606] hover:shadow-[0_4px_60px_0_#EC101065] hover:opacity-100 hover:duration-300">
+                <div class="grid justify-center lg:block">
+                    <div class="max-w-[169px] lg:max-w-[300px] xl:max-w-[355px] 2xl:max-w-[455px] mt-9 lg:mt-0 h-auto">
+                        <img src="assets/mainPage/bookSale.png" alt="book" class="w-full">
+                    </div>
+                    <button class="inline-block lg:text-2xl bg-[#EC1010] lg:ml-20 px-20 lg:shadow-[0_4px_60px_0_#FF0000] rounded-full mt-10 lg:mt-16 text-shadow-1 opacity-65 lg:duration-300 lg:hover:bg-[#750606] lg:hover:shadow-[0_4px_60px_0_#EC101065] lg:hover:opacity-100">
                         <span class="relative">
                             <img src="assets/lineSale.svg" alt="" class="absolute top-1.5">
                             5 600 р.
@@ -39,27 +41,39 @@
                         </span>
                     </button>
                 </div>
+                <div class="lg:hidden mt-5 flex flex-col items-center">
+                    <p class="w-full mt-6">
+                        Онлайн-магазин по продаже книг любого жанра! Купи для себя друга и получи море увлечений до конца его прочтения.
+                    </p>
+                    <div class="mt-6">
+                        <a href="/catalogue" class="inline-block text-2xl text-white bg-[#222299] py-2.5 px-5 shadow-[0_4px_60px_0_#160A9F] rounded-full font-medium opacity-65">
+                            перейти к покупкам
+                        </a>
+                    </div>
+                </div>
                 <div class="blur-effect"></div>
             </div>
         </div>
 
-        <div class="bg-[url(../assets/mainPage/lib.png)] opacity-80 mt-10">
+        <div class="bg-[url(../assets/mainPage/lib.png)] opacity-80 mt-40 lg:mt-10">
             <div class="container mx-auto">
-                <div class="max-w-[429px] w-full pt-20 pb-9 relative left-[900px]">
-                    <h2 class="text-6xl font-black text-with-outline">
+                <div class="flex flex-col items-center lg:block lg:max-w-[429px] w-full pt-20 pb-14 lg:pb-9 relative lg:left-[500px] xl:left-[700px] 2xl:left-[900px]">
+                    <h2 class="text-3xl lg:text-6xl font-black text-with-outline">
                         Миллионы книг в одно нажатие
                     </h2>
-                    <p class="text-with-outline text-2xl font-medium mt-3.5">
+                    <p class="text-with-outline text-xs lg:text-2xl font-black lg:font-medium mt-24 lg:mt-3.5">
                         представьте что здесь очень длинный текст
                     </p>
-                    <a href="" class="block text-with-outline text-center text-3xl font-medium mt-24 py-6 px-5 rounded-full border-black borders-1 border-solid background-button">
-                        Зарегистрироваться
-                    </a>
+                    <div>
+                        <a href="/auth" class="inline-block text-with-outline text-center text-2xl lg:text-3xl font-medium mt-28 lg:mt-24 py-2.5 lg:py-6 px-5 rounded-full lg:border-black lg:border lg:border-solid background-button-2">
+                            Зарегистрироваться
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="mt-6 px-9">
+        <div class="mt-6 px-9 hidden lg:block">
             <h2 class="ml-10 text-2xl text-white font-medium">Топ недели</h2>
             <div class="mt-4 flex gap-x-3">
                 <button id="prev" class="relative top-[-60px]">
@@ -157,48 +171,82 @@
             </div>
         </div>
 
-        <div class="mt-6 h-screen relative overflow-hidden">
-            <div class="container mx-auto">
-                <div class="relative w-full h-screen z-10">
-                    <div class="message absolute top-52 left-36 bg-zinc-950 grid grid-flow-col items-center gap-x-[20px] px-7 rounded-full max-w-[456px] w-full h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
-                        <div>
-                            <img src="assets/mainPage/mess-icon-1.png" alt="mess-icon-1">
+        <div class="mt-10 lg:hidden container mx-auto">
+            <h2 class="text-xl font-bold">Топ недели</h2>
+            <div class="mt-14 flex flex-col items-center">
+                <div class="flex flex-col gap-y-12">
+                    <div class="max-w-[250px] w-full">
+                        <div class="max-w-[250px] w-full h-auto">
+                            <img src="/assets/mainPage/slide-1.png" alt="sldie-1">
                         </div>
-                        <p class="text-white text-xl font-black">-Ты знал что в Book Knight очень выгодное сотрудничество?</p>
+                        <h4 class="mt-4 text-[28px] text-white font-medium">451 градус по фаренгейту</h4>
+                        <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
                     </div>
-                    <div class="message absolute top-72 right-10 bg-zinc-950 grid grid-flow-col items-center gap-x-[20px] px-7 rounded-full max-w-[456px] w-full h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
-                        <div>
-                            <img src="assets/mainPage/mess-icon-2.png" alt="mess-icon-2">
+                    <div class="max-w-[210px] w-full slide">
+                        <div class="max-w-[210px] w-full h-auto">
+                            <img src="/assets/mainPage/slide-1.png" alt="sldie-2">
                         </div>
-                        <p class="text-white text-xl font-black">как начать сотрудничать ?</p>
+                        <h4 class="mt-4 text-[28px] text-white font-medium">451 градус по фаренгейту</h4>
+                        <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
                     </div>
-                    <div class="message absolute top-[485px] left-80 bg-zinc-950 grid grid-flow-col items-center gap-x-[20px] px-7 rounded-full max-w-[456px] w-full h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
-                        <div>
-                            <img src="assets/mainPage/mess-icon-1.png" alt="mess-icon-1">
+                    <div class="max-w-[210px] w-full slide">
+                        <div class="max-w-[210px] w-full h-auto">
+                            <img src="/assets/mainPage/slide-1.png" alt="sldie-3">
                         </div>
-                        <p class="text-white text-xl font-black">Это очень легко! <br> Просто перейди по кнопке Начать</p>
-                    </div>
-                    <div class="message absolute top-[616px] right-0 bg-zinc-950 grid grid-flow-col items-center gap-x-[20px] px-7 rounded-full max-w-[456px] w-full h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
-                        <div>
-                            <img src="assets/mainPage/mess-icon-2.png" alt="mess-icon-2">
-                        </div>
-                        <p class="text-white text-xl font-black">Уже регистрируюсь!!!</p>
+                        <h4 class="mt-4 text-[28px] text-white font-medium">451 градус по фаренгейту</h4>
+                        <p class="mt-2 font-medium text-[#F9B300]">600 ₽</p>
                     </div>
                 </div>
-                <div class="flex justify-center relative -top-40 z-20">
-                    <a href="" class="inline-block text-white text-center text-6xl font-medium py-4 px-32 rounded-full background-button shadow-[0_9px_120px_0_#3F44B558]">
+                <div class="mt-[74px]">
+                    <a href="/catalogue" class="block text-white text-center font-bold px-12 py-1 bg-[#4C52DA] uppercase rounded-full">
+                        перейти в <br> каталог
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6 h-screen relative overflow-hidden">
+            <div class="container mx-auto">
+                <div class="relative w-full lg:h-screen z-10">
+                    <div class="message absolute top-28 lg:top-52 left-5 lg:left-36 bg-zinc-950 grid grid-flow-col items-center gap-x-2.5 lg:gap-x-5 px-3 lg:px-7 rounded-full max-w-[260px] lg:max-w-[456px] w-full h-16 lg:h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
+                        <div class="max-w-[42px] lg:max-w-[60px] w-full h-auto">
+                            <img src="assets/mainPage/mess-icon-1.png" alt="mess-icon-1" class="w-full">
+                        </div>
+                        <p class="text-white text-[10px] lg:text-xl font-black">-Ты знал что в Book Knight очень выгодное сотрудничество?</p>
+                    </div>
+                    <div class="message absolute top-52 lg:top-72 right-5 lg:right-10 bg-zinc-950 grid grid-flow-col items-center gap-x-2.5 lg:gap-x-5 px-3 lg:px-7 rounded-full max-w-[260px] lg:max-w-[456px] w-full h-16 lg:h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
+                        <div class="max-w-[42px] lg:max-w-[60px] w-full h-auto">
+                            <img src="assets/mainPage/mess-icon-2.png" alt="mess-icon-2" class="w-full">
+                        </div>
+                        <p class="text-white text-[10px] lg:text-xl font-black">как начать сотрудничать ?</p>
+                    </div>
+                    <div class="message absolute top-[304px] lg:top-[485px] left-5 lg:left-80 bg-zinc-950 grid grid-flow-col items-center gap-x-2.5 lg:gap-x-5 px-3 lg:px-7 rounded-full max-w-[260px] lg:max-w-[456px] w-full h-16 lg:h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
+                        <div class="max-w-[42px] lg:max-w-[60px] w-full h-auto">
+                            <img src="assets/mainPage/mess-icon-1.png" alt="mess-icon-1" class="w-full">
+                        </div>
+                        <p class="text-white text-[10px] lg:text-xl font-black">Это очень легко! <br> Просто перейди по кнопке Начать</p>
+                    </div>
+                    <div class="message absolute top-[400px] lg:top-[616px] right-5 lg:right-0 bg-zinc-950 grid grid-flow-col items-center gap-x-2.5 lg:gap-x-5 px-3 lg:px-7 rounded-full max-w-[260px] lg:max-w-[456px] w-full h-16 lg:h-[99px] shadow-[0_9px_60px_0_#3F44B558]">
+                        <div class="max-w-[42px] lg:max-w-[60px] w-full h-auto">
+                            <img src="assets/mainPage/mess-icon-2.png" alt="mess-icon-2" class="w-full">
+                        </div>
+                        <p class="text-white text-[10px] lg:text-xl font-black">Уже регистрируюсь!!!</p>
+                    </div>
+                </div>
+                <div class="flex justify-center relative top-[520px] lg:-top-40 z-20">
+                    <a href="" class="inline-block text-white text-center text-[10px] lg:text-6xl font-medium py-3.5 lg:py-4 px-24 lg:px-32 rounded-full background-button shadow-[0_9px_120px_0_#3F44B558]">
                         НАЧАТЬ
                     </a>
                 </div>
 
             </div>
-            <img src="assets/mainPage/mess-1.png" alt="mess-1" class="absolute left-[1650px] top-[-850px] back-image transition-transform" data-start-left="1650" data-start-top="-850">
-            <img src="assets/mainPage/mess-2.png" alt="mess-2" class="absolute left-[1150px] top-[-950px] back-image transition-transform" data-start-left="1300" data-start-top="-1100">
-            <img src="assets/mainPage/mess-3.png" alt="mess-3" class="absolute left-[1150px] top-[-1150px] back-image transition-transform" data-start-left="1150" data-start-top="-1150">
-            <img src="assets/mainPage/mess-3.png" alt="mess-3" class="absolute left-[1050px] top-[-1450px] back-image transition-transform" data-start-left="1050" data-start-top="-1450">
+            <img src="assets/mainPage/mess-1.png" alt="mess-1" class="hidden lg:inline absolute left-[1650px] top-[-850px] back-image transition-transform" data-start-left="1650" data-start-top="-850">
+            <img src="assets/mainPage/mess-2.png" alt="mess-2" class="hidden lg:inline absolute left-[1150px] top-[-950px] back-image transition-transform" data-start-left="1300" data-start-top="-1100">
+            <img src="assets/mainPage/mess-3.png" alt="mess-3" class="hidden lg:inline absolute left-[1150px] top-[-1150px] back-image transition-transform" data-start-left="1150" data-start-top="-1150">
+            <img src="assets/mainPage/mess-3.png" alt="mess-3" class="hidden lg:inline absolute left-[1050px] top-[-1450px] back-image transition-transform" data-start-left="1050" data-start-top="-1450">
         </div>
 
-        <div class="mx-12 mt-16 text-white text-xl">
+        <div class="hidden lg:block mx-12 mt-16 text-white text-xl">
             <p>
                 @”Ut enim ad minim veniam, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>

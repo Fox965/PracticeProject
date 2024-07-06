@@ -14,8 +14,10 @@ const toggleFormVisibility = () => {
 
 applicationBtn.addEventListener('click', () => {
     const windowHeight = window.scrollY;
-    applicationForm.style.left = '25%';
-    applicationForm.style.top = `${windowHeight + 450}px`;
+    const windowWidth = document.body.clientWidth;
+    if (windowWidth < 375) {
+        applicationForm.style.left = '10%';
+    }
     toggleFormVisibility();
 });
 

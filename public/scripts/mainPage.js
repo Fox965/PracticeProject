@@ -1,6 +1,6 @@
 // SLIDER
 const slides = document.querySelectorAll(`.slide`);
-let count = 5;
+let count = 7;
 let position = 0;
 document.querySelector(`#prev`).addEventListener(`click`, () => {
     if (position) {

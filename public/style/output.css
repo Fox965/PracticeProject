@@ -870,6 +870,14 @@ video {
   top: 950px;
 }
 
+.right-3 {
+  right: 0.75rem;
+}
+
+.right-40 {
+  right: 10rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -1291,6 +1299,18 @@ video {
   margin-top: 95px;
 }
 
+.mt-\[\] {
+  margin-top: ;
+}
+
+.mb-\[14px\] {
+  margin-bottom: 14px;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -1347,6 +1367,11 @@ video {
 .size-full {
   width: 100%;
   height: 100%;
+}
+
+.size-\[18px\] {
+  width: 18px;
+  height: 18px;
 }
 
 .h-12 {
@@ -1483,6 +1508,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[304\.33px\] {
+  height: 304.33px;
 }
 
 .w-8 {
@@ -1651,6 +1680,14 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[321px\] {
+  width: 321px;
 }
 
 .max-w-12 {
@@ -2013,6 +2050,14 @@ video {
   overflow: hidden;
 }
 
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
 .overflow-y-scroll {
   overflow-y: scroll;
 }
@@ -2290,6 +2335,14 @@ video {
 
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.bg-\[url\(\'\/assets\/auth\/eye-close-18\.png\'\)\] {
+  background-image: url('/assets/auth/eye-close-18.png');
+}
+
+.bg-\[url\(\'\/assets\/auth\/eye-open-18\.png\'\)\] {
+  background-image: url('/assets/auth/eye-open-18.png');
 }
 
 .from-\[\#6183DD\] {
@@ -2601,6 +2654,18 @@ video {
 
 .pt-\[70px\] {
   padding-top: 70px;
+}
+
+.pt-\[102px\] {
+  padding-top: 102px;
+}
+
+.pb-\[\] {
+  padding-bottom: ;
+}
+
+.pb-\[351\.67px\] {
+  padding-bottom: 351.67px;
 }
 
 .text-left {
@@ -3230,6 +3295,40 @@ body {
   background-color: rgb(249 179 0 / var(--tw-bg-opacity));
 }
 
+@media (min-width: 768px) {
+  .md\:mb-\[36px\] {
+    margin-bottom: 36px;
+  }
+
+  .md\:ml-\[77px\] {
+    margin-left: 77px;
+  }
+
+  .md\:mr-\[85px\] {
+    margin-right: 85px;
+  }
+
+  .md\:mt-\[53px\] {
+    margin-top: 53px;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
+  .md\:h-\[85\%\] {
+    height: 85%;
+  }
+
+  .md\:pb-\[345px\] {
+    padding-bottom: 345px;
+  }
+
+  .md\:pt-\[292px\] {
+    padding-top: 292px;
+  }
+}
+
 @media (min-width: 1024px) {
   .lg\:-top-40 {
     top: -10rem;
@@ -3269,6 +3368,10 @@ body {
 
   .lg\:top-\[616px\] {
     top: 616px;
+  }
+
+  .lg\:-top-4 {
+    top: -1rem;
   }
 
   .lg\:mb-24 {
@@ -3367,6 +3470,22 @@ body {
     margin-top: 909px;
   }
 
+  .lg\:mb-\[36px\] {
+    margin-bottom: 36px;
+  }
+
+  .lg\:ml-\[77px\] {
+    margin-left: 77px;
+  }
+
+  .lg\:mr-\[85px\] {
+    margin-right: 85px;
+  }
+
+  .lg\:mt-\[53px\] {
+    margin-top: 53px;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -3391,12 +3510,29 @@ body {
     display: none;
   }
 
+  .lg\:size-\[37px\] {
+    width: 37px;
+    height: 37px;
+  }
+
   .lg\:h-\[99px\] {
     height: 99px;
   }
 
   .lg\:h-screen {
     height: 100vh;
+  }
+
+  .lg\:h-\[639px\] {
+    height: 639px;
+  }
+
+  .lg\:w-\[674px\] {
+    width: 674px;
+  }
+
+  .lg\:w-\[511px\] {
+    width: 511px;
   }
 
   .lg\:max-w-\[300px\] {
@@ -3496,6 +3632,18 @@ body {
     row-gap: 1.75rem;
   }
 
+  .lg\:overflow-auto {
+    overflow: auto;
+  }
+
+  .lg\:overflow-x-auto {
+    overflow-x: auto;
+  }
+
+  .lg\:overflow-y-auto {
+    overflow-y: auto;
+  }
+
   .lg\:border {
     border-width: 1px;
   }
@@ -3516,6 +3664,14 @@ body {
   .lg\:border-black {
     --tw-border-opacity: 1;
     border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/auth\/eye-close\.png\'\)\] {
+    background-image: url('/assets/auth/eye-close.png');
+  }
+
+  .lg\:bg-\[url\(\'\/assets\/auth\/eye-open\.png\'\)\] {
+    background-image: url('/assets/auth/eye-open.png');
   }
 
   .lg\:from-\[\#1A2037\] {
@@ -3576,6 +3732,14 @@ body {
 
   .lg\:pb-9 {
     padding-bottom: 2.25rem;
+  }
+
+  .lg\:pb-\[345px\] {
+    padding-bottom: 345px;
+  }
+
+  .lg\:pt-\[292px\] {
+    padding-top: 292px;
   }
 
   .lg\:text-start {
@@ -3671,6 +3835,10 @@ body {
 @media (min-width: 1280px) {
   .xl\:left-\[700px\] {
     left: 700px;
+  }
+
+  .xl\:flex {
+    display: flex;
   }
 
   .xl\:max-w-\[355px\] {

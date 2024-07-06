@@ -48,15 +48,6 @@
     color: transparent;
 }
 
-.hidden-scroll {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.hidden-scroll::-webkit-scrollbar {
-    display: none;
-}
-
 @layer components {
     .muzhik {
         @apply
@@ -84,6 +75,15 @@
             bg-gradient-to-b from-[#F49722] to-[#EC9321]
             shadow-[0_0_20px_20px_#ED9321];
     }
+}
+
+.hidden-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hidden-scroll::-webkit-scrollbar {
+    display: none;
 }
 
 body {

@@ -5,18 +5,18 @@ module.exports = {
       './public/scripts/**/*.js',
   ],
   theme: {
-    extend: {
-      container: {
-        screens: {
-          mb: '375px',  //ширина под мобилки (прямо как в нашем дизайне)
-          sm: '640px',  
-          md: '768px',  
-          lg: '1024px', 
-          xl: '1280px', 
-          '2xl': '1536px',
-	        '3xl': '1660px',  //изменил под десктопы, чтобы хоть как-то под размеры макета попасть
-        },
+    container: {
+      screens: {
+        mbl: '375px',  //ширина под мобилки (прямо как в нашем дизайне)
+        sm: '640px',  
+        md: '768px',  
+        lg: '1024px', 
+        xl: '1280px', 
+        '2xl': '1536px',
+        '3xl': '1660px',  //изменил под десктопы, чтобы хоть как-то под размеры макета попасть
       },
+    },
+    extend: {
       colors:{
         'rainbow': 'linear-gradient(to right, #FF0000, #FF6B00, #FFD600, #52FF00, #00FF59, #0029FF, #EB05FF)',
         'stroke': '#E4E4E4',

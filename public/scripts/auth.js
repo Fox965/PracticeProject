@@ -40,28 +40,43 @@ enterButton.addEventListener(`click`, ()=>{
 })
 
 showPass.addEventListener(`click`, (e)=>{
-    if (showPass.classList.contains(`bg-[url('/assets/auth/eye-close.png')]`)){
-        showPass.classList.remove(`bg-[url('/assets/auth/eye-close.png')]`);
-        showPass.classList.add(`bg-[url('/assets/auth/eye-open.png')]`);
+    if (showPass.classList.contains(`lg:bg-[url('/assets/auth/eye-close.png')]`)){
+        showPass.classList.remove(`lg:bg-[url('/assets/auth/eye-close.png')]`);
+        showPass.classList.remove(`bg-[url('/assets/auth/eye-close-18.png')]`);
+
+        showPass.classList.add(`lg:bg-[url('/assets/auth/eye-open.png')]`);
+        showPass.classList.add(`bg-[url('/assets/auth/eye-open-18.png')]`);
+
         passField.setAttribute('type', 'text');
     }
     else{
-        showPass.classList.remove(`bg-[url('/assets/auth/eye-open.png')]`);
-        showPass.classList.add(`bg-[url('/assets/auth/eye-close.png')]`);
+        showPass.classList.remove(`lg:bg-[url('/assets/auth/eye-open.png')]`);
+        showPass.classList.remove(`bg-[url('/assets/auth/eye-open-18.png')]`);
+        showPass.classList.add(`lg:bg-[url('/assets/auth/eye-close.png')]`);
+        showPass.classList.add(`bg-[url('/assets/auth/eye-close-18.png')]`);
+
         passField.setAttribute('type', 'password');
     }
 })
 
 showRegPass.addEventListener(`click`, (e)=>{
-    if (showRegPass.classList.contains(`bg-[url('/assets/auth/eye-close.png')]`)){
-        showRegPass.classList.remove(`bg-[url('/assets/auth/eye-close.png')]`);
-        showRegPass.classList.add(`bg-[url('/assets/auth/eye-open.png')]`);
+    if (showRegPass.classList.contains(`lg:bg-[url('/assets/auth/eye-close.png')]`)){
+        showRegPass.classList.remove(`lg:bg-[url('/assets/auth/eye-close.png')]`);
+        showRegPass.classList.remove(`bg-[url('/assets/auth/eye-close-18.png')]`);
+
+        showRegPass.classList.add(`lg:bg-[url('/assets/auth/eye-open.png')]`);
+        showRegPass.classList.add(`bg-[url('/assets/auth/eye-open-18.png')]`);
+
         passRegField.setAttribute('type', 'text');
         passRegRepeatField.setAttribute('type', 'text');
     }
     else{
-        showRegPass.classList.remove(`bg-[url('/assets/auth/eye-open.png')]`);
-        showRegPass.classList.add(`bg-[url('/assets/auth/eye-close.png')]`);
+        showRegPass.classList.remove(`lg:bg-[url('/assets/auth/eye-open.png')]`);
+        showRegPass.classList.remove(`bg-[url('/assets/auth/eye-open-18.png')]`);
+
+        showRegPass.classList.add(`lg:bg-[url('/assets/auth/eye-close.png')]`);
+        showRegPass.classList.add(`bg-[url('/assets/auth/eye-close-18.png')]`);
+
         passRegField.setAttribute('type', 'password');
         passRegRepeatField.setAttribute('type', 'password');
     }

@@ -733,8 +733,8 @@ video {
   left: 0px;
 }
 
-.left-1\/2 {
-  left: 50%;
+.left-1\/4 {
+  left: 25%;
 }
 
 .left-5 {
@@ -863,10 +863,6 @@ video {
 
 .top-\[950px\] {
   top: 950px;
-}
-
-.left-1\/4 {
-  left: 25%;
 }
 
 .z-0 {
@@ -1453,11 +1449,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-y-1\/2 {
-  --tw-translate-y: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .translate-y-3 {
   --tw-translate-y: 0.75rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1465,36 +1456,6 @@ video {
 
 .translate-y-3\.5 {
   --tw-translate-y: 0.875rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-1\/2 {
-  --tw-translate-x: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-x-1\/2 {
-  --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-1\/2 {
-  --tw-translate-y: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-1\/4 {
-  --tw-translate-y: 25%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-1\/4 {
-  --tw-translate-y: -25%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-x-96 {
-  --tw-translate-x: -24rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1962,8 +1923,8 @@ video {
   padding: 19px 47px 26px 41px;
 }
 
-.p-\[30px_18px_56px_25px\] {
-  padding: 30px 18px 56px 25px;
+.p-\[30px_10px_56px_10px\] {
+  padding: 30px 10px 56px 10px;
 }
 
 .p-\[40px_134px_25px_80px\] {
@@ -1972,22 +1933,6 @@ video {
 
 .p-\[81px_66px_92px_65px\] {
   padding: 81px 66px 92px 65px;
-}
-
-.p-\[30px_18px_56px_20px\] {
-  padding: 30px 18px 56px 20px;
-}
-
-.p-\[30px_18px_56px_15px\] {
-  padding: 30px 18px 56px 15px;
-}
-
-.p-\[30px_15px_56px_15px\] {
-  padding: 30px 15px 56px 15px;
-}
-
-.p-\[30px_10px_56px_10px\] {
-  padding: 30px 10px 56px 10px;
 }
 
 .px-10 {
@@ -2201,26 +2146,6 @@ video {
 
 .pt-\[292px\] {
   padding-top: 292px;
-}
-
-.pl-8 {
-  padding-left: 2rem;
-}
-
-.pl-6 {
-  padding-left: 1.5rem;
-}
-
-.pr-4 {
-  padding-right: 1rem;
-}
-
-.pl-4 {
-  padding-left: 1rem;
-}
-
-.pr-2 {
-  padding-right: 0.5rem;
 }
 
 .text-left {
@@ -2834,6 +2759,10 @@ body {
     margin-top: 909px;
   }
 
+  .lg\:mt-44 {
+    margin-top: 11rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -3041,6 +2970,10 @@ body {
     padding-bottom: 2.25rem;
   }
 
+  .lg\:pb-20 {
+    padding-bottom: 5rem;
+  }
+
   .lg\:text-start {
     text-align: start;
   }
@@ -3069,6 +3002,11 @@ body {
     font-size: 28px;
   }
 
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
   .lg\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -3077,11 +3015,6 @@ body {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .lg\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 
   .lg\:font-black {

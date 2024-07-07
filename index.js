@@ -177,6 +177,7 @@ app.get(`/account`, (req, res)=>{
   res.render(`account`, {
     nav: nav,
     user: users[0],
+    korzina: korzina,
   })
 })
 

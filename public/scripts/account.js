@@ -10,6 +10,26 @@ let passCont = document.querySelector(`#passCont`);
 let logField = document.querySelector(`#logField`);
 let passField = document.querySelector(`#passField`);
 
+let startPriceAll = document.querySelectorAll(`#startPriceAll > #startPrice`);
+let discountAll = document.querySelectorAll(`#discountAll > #discount`);
+let finalPriceAll = document.querySelectorAll(`#finalPriceAll > #finalPrice`);
+let totalPrice = document.querySelector(`#totalPrice`);
+let countBooksAll = document.querySelectorAll(`#nameBookAll > #countBook`);
+
+summ = 0;
+
+function amount(){
+    for(let i = 0; i < startPriceAll.length; i++){
+        discountAll[i].innerHTML = (Number(startPriceAll[i].innerHTML)*Number(countBooksAll[i].innerHTML))/10;
+        finalPriceAll[i].innerHTML = (Number(startPriceAll[i].innerHTML)*Number(countBooksAll[i].innerHTML)) - Number(discountAll[i].innerHTML);
+
+        summ += Number(finalPriceAll[i].innerHTML);
+    }
+    totalPrice.innerHTML = summ;
+}
+
+amount()
+
 editAccount.addEventListener(`click`, ()=>{
     buttons.classList.remove(`hidden`);
     logField.removeAttribute("readonly");

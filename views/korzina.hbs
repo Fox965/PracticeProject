@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title id="title">Корзина</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="style/output.css" rel="stylesheet">
+    <script src="scripts/index.js" defer></script>
+    <script src="scripts/korzina.js" defer></script>
+</head>
+<body class="font-main">
+    <div class="main-background">
+        <div class="container mx-auto pt-5 text-black-two">
+            {{> header}}
+
+            <div class="basket relative mt-[145px] lg:px-[140px] w-full bg-white border-stroke shadow-cards rounded-[20px]">
+                <div class="relative flex flex-col justify-between">
+                    <div class="flex justify-between items-center">
+                        <p class="flex justify-center items-center w-full lg:w-[396px] lg:block text-[32px] lg:text-[40px] font-normal mb-0 lg:mb-[40px] pt-[19px] lg:pt-[110px] px-[27px] lg:px-0">Товары в корзине</p>
+                        <button class="absolute lg:static bottom-[21px] right-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]
+                        lg:translate-x-0 lg:translate-y-0 lg:top-[120px] lg:right-0 text-white text-xl font-black
+                    bg-main-yellow w-[158px] h-[45px] rounded-[25px] hover:bg-main-yellow-hover duration-300 mt-[19px] lg:mt-[80px]">Удалить все</button>
+                    </div>
+                    <table class="border-separate mb-[100px] lg:mb-0 border-spacing-x-0 border-spacing-y-5 text-left font-normal w-full relative">
+                        <thead class="hidden lg:table-header-group">
+                            <tr>
+                                <th class="font-normal text-xl ">Удалить товар</th>
+                                <th class="font-normal text-xl pl-[73px]">Наименование товара</th>
+                                <th class="font-normal text-xl ">Цена</th>
+                                <th class="font-normal text-xl ">Количество</th>
+                                <th class="font-normal text-xl ">Скидка <span>(10%)</span></th>
+                                <th class="font-normal text-xl ">Итого</th>
+                            </tr>
+                        </thead>
+                        <tbody class="flex flex-col items-center lg:table-header-group">
+                            {{#each korzina}}
+                                <tr class="flex flex-col pl-7 pr-7 lg:pl-5 lg:pr-0 lg:table-row pt-5 w-[375px] lg:w-full h-[403px] lg:h-[173px] mb-[35px] lg:mb-0 bg-gray-back border border-black lg:border-none rounded-[20px]">
+                                    <td class="flex justify-between mb-3.5 lg:mb-0 items-center lg:table-cell w-full lg:w-[160px] border-y border-l border-none lg:border-gray-stroke-one rounded-l-[20px]">
+                                        <p class="text-xl lg:hidden">Удалить товар</p>
+                                        <div class="flex justify-center items-center w-[106px] lg:w-auto">
+                                            <img class="size-[21px] object-cover" src="assets/korzina/delete.png" alt="delete">
+                                        </div>
+                                    </td>
+                                    <td class="mb-3.5 lg:mb-0 pl-0 lg:pl-[73px] border-y border-none lg:border-gray-stroke-one">
+                                        <div class="flex">
+                                            <img class="w-[61px] h-[113px] object-cover rounded-[25px] mr-[34px]" src="{{this.book_image}}" alt="book">
+                                            <div class="flex flex-col justify-evenly">
+                                                <p class="text-[25px]">{{this.book_name}}</p>
+                                                <p class="text-lg">{{this.book_author}}</p>
+                                                <p class="text-lg"><span>{{this.book_pages}}</span> г.</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="flex justify-between items-center lg:table-cell mb-3.5 lg:mb-0 border-y border-none lg:border-gray-stroke-one">
+                                        <p class="text-xl lg:hidden">Цена</p>
+                                        <div class="flex justify-center items-center w-[106px] lg:w-auto">
+                                            <p id="startPriceAll" class="text-base lg:text-[25px]"><span id="startPrice">{{this.book_price}}</span> ₽</p>
+                                        </div>
+                                    </td>
+                                    <td class="flex justify-between items-center lg:table-cell mb-3.5 lg:mb-0 border-y border-none lg:border-gray-stroke-one">
+                                        <p class="text-xl lg:hidden">Количество</p>
+                                        <div class="flex justify-center items-center w-[106px] lg:w-auto">
+                                            <div id="buttonsCount" class="flex w-[106px] lg:w-[170px] h-5 lg:h-[50px] bg-counter font-medium text-[25px] leading-0 text-center border border-solid border-gray-stroke-counter rounded-[5px]">
+                                                <button id="minus" class="flex justify-center items-center px-2 h-full lg:!px-[23px] text-back-text duration-300 hover:bg-zinc-200 hover:text-black">-</button>
+                                                <span id="countBooks" class="font-normal text-base lg:text-[20px] text-center self-center mx-auto">{{this.count}}</span>
+                                                <button id="plus" class="flex justify-center items-center px-2 h-full lg:!px-[23px] text-back-text duration-300 hover:bg-zinc-200 hover:text-black">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="flex justify-between items-center lg:table-cell mb-3.5 lg:mb-0 border-y border-none lg:border-gray-stroke-one">
+                                        <p class="text-xl lg:hidden">Скидка <span>(10%)</span></p>
+                                        <div class="flex justify-center items-center w-[106px] lg:w-auto">
+                                            <p id="discountAll" class="text-base lg:text-[25px]"><span id="discount">27</span> ₽</p>
+                                        </div>
+                                    </td>
+                                    <td class="flex justify-between items-center lg:table-cell mb-3.5 lg:mb-0 border-y border-r border-none lg:border-gray-stroke-one rounded-r-[20px]">
+                                        <p class="text-xl lg:hidden">Итого</p>
+                                        <div class="flex justify-center items-center w-[106px] lg:w-auto">
+                                            <p id="finalPriceAll" class="text-base lg:text-[25px]"><span id="finalPrice">243</span> ₽</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="delivery mt-[29px] mb-[30px] px-[140px] w-full h-auto lg:h-[730px] bg-white border-stroke shadow-cards rounded-[20px]">
+                <p class="flex justify-center items-center lg:block pt-[19px] lg:pt-[70px] pb-[30px] lg:pb-[50px] text-[32px] lg:text-3xl">Доставка</p>
+                <form action="" class="flex flex-col items-center lg:block">
+                    <div class="grid grid-col-1 lg:grid-cols-2 lg:grid-rows-2 gap-5 fields py-[40px] lg:py-0 w-[375px] lg:w-full border border-black lg:border-none rounded-[20px] pl-[29px] lg:pl-0 pr-[35px] lg:pr-0">
+                        <input class="border border-[#D6D6D6] lg:border-none bg-[#F6F6F6] text-xl rounded-[5px] h-[50px] lg:h-[70px] w-full lg:w-[680px] outline-none font-normal text-black-two placeholder:text-center text-center lg:text-left lg:placeholder:text-left lg:pl-[60px] placeholder:text-[#C4C4C4] placeholder:text-xl" type="text" name="name" placeholder="Имя">
+                        <input class="border border-[#D6D6D6] lg:border-none bg-[#F6F6F6] text-xl rounded-[5px] h-[50px] lg:h-[70px] w-full lg:w-[680px] outline-none font-normal text-black-two placeholder:text-center text-center lg:text-left lg:placeholder:text-left lg:pl-[60px] placeholder:text-[#C4C4C4] placeholder:text-xl" type="text" name="country" placeholder="Страна">
+                        <input class="border border-[#D6D6D6] lg:border-none bg-[#F6F6F6] text-xl rounded-[5px] h-[50px] lg:h-[70px] w-full lg:w-[680px] outline-none font-normal text-black-two placeholder:text-center text-center lg:text-left lg:placeholder:text-left lg:pl-[60px] placeholder:text-[#C4C4C4] placeholder:text-xl" type="text" name="surname" placeholder="Фамилия">
+                        <input class="border border-[#D6D6D6] lg:border-none bg-[#F6F6F6] text-xl rounded-[5px] h-[50px] lg:h-[70px] w-full lg:w-[680px] outline-none font-normal text-black-two placeholder:text-center text-center lg:text-left lg:placeholder:text-left lg:pl-[60px] placeholder:text-[#C4C4C4] placeholder:text-xl" type="text" name="town" placeholder="Город">
+                        <input class="border border-[#D6D6D6] lg:border-none bg-[#F6F6F6] text-xl rounded-[5px] h-[50px] lg:h-[70px] w-full lg:w-[680px] outline-none font-normal text-black-two placeholder:text-center text-center lg:text-left lg:placeholder:text-left lg:pl-[60px] placeholder:text-[#C4C4C4] placeholder:text-xl" type="tel" name="tel" placeholder="Телефон">
+                        <input class="border border-[#D6D6D6] lg:border-none bg-[#F6F6F6] text-xl rounded-[5px] h-[50px] lg:h-[70px] w-full lg:w-[680px] outline-none font-normal text-black-two placeholder:text-center text-center lg:text-left lg:placeholder:text-left lg:pl-[60px] placeholder:text-[#C4C4C4] placeholder:text-xl" type="text" name="address" placeholder="Улица, дом">
+                        <input class="border border-[#D6D6D6] lg:border-none bg-[#F6F6F6] text-xl rounded-[5px] h-[50px] lg:h-[70px] w-full lg:w-[680px] outline-none font-normal text-black-two placeholder:text-center text-center lg:text-left lg:placeholder:text-left lg:pl-[60px] placeholder:text-[#C4C4C4] placeholder:text-xl" type="email" name="email" placeholder="Email">
+                        <input class="border border-[#D6D6D6] lg:border-none bg-[#F6F6F6] text-xl rounded-[5px] h-[50px] lg:h-[70px] w-full lg:w-[680px] outline-none font-normal text-black-two placeholder:text-center text-center lg:text-left lg:placeholder:text-left lg:pl-[60px] placeholder:text-[#C4C4C4] placeholder:text-xl" type="text" name="postcode" minlength="6" maxlength="6" placeholder="Почтовый индекс">
+                        <input class="border border-[#D6D6D6] lg:border-none bg-[#F6F6F6] text-xl rounded-[5px] h-[50px] lg:h-[70px] w-full lg:w-[680px] outline-none font-normal text-black-two placeholder:text-center text-center lg:text-left lg:placeholder:text-left lg:pl-[60px] placeholder:text-[#C4C4C4] placeholder:text-xl" type="text" name="company" placeholder="Название компании">
+                        <input class="border border-[#D6D6D6] lg:border-none bg-[#F6F6F6] text-xl rounded-[5px] h-[50px] lg:h-[70px] w-full lg:w-[680px] outline-none font-normal text-black-two placeholder:text-center text-center lg:text-left lg:placeholder:text-left lg:pl-[60px] placeholder:text-[#C4C4C4] placeholder:text-xl" type="text" name="comment" placeholder="Комментарии к заказу">
+                    </div>
+                    <button class="mt-[40px] w-[245px] lg:w-full h-[45px] lg:h-[70px] text-xl mb-[45px] lg:mb-0 lg:text-[25px] text-white bg-main-yellow hover:bg-main-yellow-hover rounded-[25px] font-black">Рассчитать доставку</button>
+                </form>
+            </div>
+            <div class="other-cards flex flex-col lg:flex-row gap-5 mb-[86px] lg:mb-[187px]">
+                <div class="flex flex-col items-center lg:inline-block bg-white lg:h-[448px] w-full lg:w-[960px] lg:px-[140px] border-stroke shadow-cards rounded-[20px]">
+                    <p class="flex justify-center items-center lg:block pt-[11px] lg:pt-[50px] pb-6 lg:pb-0 text-[32px] lg:text-3xl">Промокод</p>
+                    <div class="flex justify-center items-start flex-col lg:block pl-[30px] pr-[8px] lg:px-0  w-[375px] lg:w-auto border border-black rounded-[25px] lg:border-none">
+                        <p class="mt-[68px] lg:mt-[30px] mb-[53px] lg:mb-0 text-xl leading-[130%] w-[335px] lg:w-[600px]">Введите подарочный промокод в поле ниже и получите скидку на заказ до 20%. Скидка не распространяется на доставку</p>
+                        <input class="mt-0 lg:mt-3 mb-[86px] lg:mb-0 border-none bg-[#F6F6F6] text-xl rounded-[5px] h-[50px] lg:h-[70px] w-[309px] lg:w-[680px] outline-none font-normal text-black-two lg:pl-[60px] placeholder:text-center text-center lg:text-left lg:placeholder:text-left placeholder:text-[#C4C4C4] placeholder:text-xl" type="text" name="text" placeholder="Введите промокод">
+                    </div>
+                    <button class="mt-[42px] lg:mt-[39px] mb-[35.75px] lg:mb-0 w-[245px] lg:w-full h-[52.25px] lg:h-[70px] text-xl lg:text-[25px] text-white bg-main-yellow hover:bg-main-yellow-hover rounded-[25px] font-black">Ввести промокод</button>
+                </div>
+                <div class="flex flex-col items-center lg:inline-block bg-white lg:h-[448px] w-full lg:w-[680px] lg:px-[80px] text-xl border-stroke shadow-cards rounded-[20px]">
+                    <p class="flex justify-center items-center lg:hidden pt-[11px] lg:pt-[50px] pb-6 lg:pb-0 text-[32px] lg:text-3xl">Оплата</p>
+                    <div class="flex justify-center items-start flex-col lg:block px-[7px] lg:px-0 w-[375px] lg:w-auto border border-black rounded-[25px] lg:border-none">
+                        <div class="flex justify-between mt-[45px] mb-[11px]">
+                            <p class="mt-1.5 text-3xl">Итог: <span id="totalPrice">486</span> ₽</p>
+                            <div class="flex">
+                                <img class="w-[79px] h-[51px] object-cover" src="assets/korzina/mastercard.png" alt="card">
+                                <img class="w-[79px] h-[51px] object-none" src="assets/korzina/visa.png" alt="card">
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="text-grayText mb-1.5">Подытог: <span id="startPriceTotal">540</span> ₽</p>
+                            <p class="text-grayText mb-1.5">Скидка: <span id="discountTotal">54</span> ₽ <span>(10%)</span></p>
+                        </div>
+                        <div class="flex flex-col lg:flex-row">
+                            <p>Доставка:</p>
+                            <div class="radiobuttons ml-2 text-black-two mt-6 lg:mt-0 mb-[58px] lg:mb-0">
+                                <div class="flex mb-2">
+                                    
+                                    <input id="one" class="peer/one hidden" type="radio" name="status" checked />
+                                    <label for="one" class="mt-1.5 mr-2 size-4 rounded-full bg-stroke peer-checked/one:bg-main-yellow duration-200"></label>
+                                    <label for="one" class="">СДЭК - до двери 390 ₽</label>
+                                    
+                                </div>
+                                <div class="flex mb-2">
+                                    <input id="two" class="peer/two hidden" type="radio" name="status" checked />
+                                    <label for="two" class="mt-1.5 mr-2 size-4 rounded-full bg-stroke peer-checked/two:bg-main-yellow duration-200"></label>
+                                    <label for="two" class="">Почта России 300 ₽</label>
+                                    
+                                </div>
+                                <div class="flex mb-2">
+                                    <input id="three" class="peer/three hidden" type="radio" name="status" checked />
+                                    <label for="three" class="mt-1.5 mr-2 size-4 rounded-full bg-stroke peer-checked/three:bg-main-yellow duration-200"></label>
+                                    <label for="three" class="">DPD - курьер, 3 дн 427 ₽</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-5 mb-2.5 w-[245px] lg:w-full h-[52.25px] lg:h-[70px] text-xl lg:text-[25px] text-white bg-main-yellow hover:bg-main-yellow-hover rounded-[25px] font-black">Оплатить заказ</button>
+                    <p class="mx-auto lg:mx-0 w-[319px] lg:w-auto mt-[25.75px] mb-[25px] lg:mt-0 lg:mb-0 text-sm text-grayText leading-4">Ваши персональные данные будут использоваться для управления доступом к вашей
+                        учетной записи и для других целей, описанных в нашем
+                        документе политика конфиденциальности.</p>
+                </div>
+            </div>
+        </div>
+        {{> secondFooter}}
+    </div>
+</body>
+</html>

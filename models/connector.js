@@ -1,8 +1,21 @@
-const { Sequelize } = require('sequelize');
+let mysql = require(`mysql`)
 
-const sequelize = new Sequelize('database', 'username', 'password', {
-  host: 'localhost',
-  dialect: 'postgres',
-});
+const conn = mysql.createConnection({
+  host: `localhost`,
+  user: 'root',
+  database: `bookknight`,
+  password: '',
+  connectTimeout: 200000
+})
 
-module.exports = sequelize;
+module.exports = conn
+
+conn.connect( err => {
+  if (err) {
+    console.log(err);
+    return err;
+  } else {
+    console.log(`Successfuly connected!`)
+  }
+})
+

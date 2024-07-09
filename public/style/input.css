@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .auth-gradient{
+        @apply bg-gradient-to-br from-[#ffffff] from-40% to-[#EABB5F] to-100%;
+    }
+}
+
+@layer components {
+    .button-style-1 {
+        @apply font-black text-center text-white bg-main-yellow duration-300 lg:hover:bg-main-yellow-hover;
+    }
+    .button-style-1:hover {
+        @apply hover:bg-main-yellow-hover;
+    }
+}
+
+@layer components {
+    .dropdown {
+        @apply bg-black border-white border border-solid text-main-yellow;
+    }
+}
+
+@layer components {
+    .search-button {
+        @apply px-3 duration-200;
+    }
+
+    .search-button > * {
+        @apply text-[#343434];
+    }
+
+    .search-button:hover {
+        @apply bg-black;
+    }
+
+    .search-button:hover > * {
+        @apply text-main-yellow;
+    }
+}
+
+.gradient-text {
+    background-image: linear-gradient(to right, #FF0000 0%, #FF6B00 15%, #FFD600 30%, #52FF00 46%, #00FFF0 59%, #0029FF 74%, #EB05FF 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@layer components {
+    .muzhik {
+        @apply
+            lg:bg-[url("../assets/mainPage/Muzhik.png")]
+            lg:bg-no-repeat
+            2xl:bg-[160px_bottom]
+            xl:bg-[180px_bottom]
+            lg:bg-[130px_bottom]
+            2xl:bg-[length:auto]
+            xl:bg-[length:800px]
+            lg:bg-[length:700px];
+    }
+}
+
+@layer components {
+    .blur-effect {
+        @apply
+            hidden
+            lg:block
+            absolute
+            bottom-0
+            left-0
+            w-full
+            h-[1px]
+            bg-gradient-to-b from-[#F49722] to-[#EC9321]
+            shadow-[0_0_20px_20px_#ED9321];
+    }
+}
+
+.hidden-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hidden-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.main-background {
+    background-image: linear-gradient(#F5C343 0, #FA9E22 25%, #360802 50%, #000 93%);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-with-outline {
+    color: white;
+}
+
+@media screen and (min-width: 1024px) {
+    .text-with-outline {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+}
+
+.background-button {
+    position: relative;
+    background: linear-gradient(59deg, #4C52DA 0, #292C74 69%);
+    transition: .3s;
+    z-index: 1;
+}
+
+.background-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 100px;
+    background: linear-gradient(59deg, #292C74 0, #292C74 100%);
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: -1;
+}
+
+@media screen and (min-width: 1024px) {
+    .background-button:hover::before, .background-button:hover {
+        opacity: 1;
+    }
+}
+
+.background-button-2 {
+    background: #222299;
+}
+
+@media screen and (min-width: 1024px) {
+    .background-button-2 {
+        position: relative;
+        background: linear-gradient(59deg, #4C52DA 0, #292C74 69%);
+        transition: .3s;
+        z-index: 1;
+    }
+
+    .background-button-2::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 100px;
+        background: linear-gradient(59deg, #292C74 0, #292C74 100%);
+        opacity: 0;
+        transition: opacity .3s;
+        z-index: -1;
+    }
+
+    .background-button-2:hover::before, .background-button-2:hover {
+        opacity: 1;
+    }
+}
+
+.borders-1 {
+    border-width: 1px;
+}
+
+.text-shadow-1 {
+    text-shadow: 0 4px 4px #00000025;
+}
+
+.message {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.message.visible {
+    animation: animeMessage .5s ease-in forwards;
+}
+
+.card-predlozhka {
+    animation: anineCard .5s ease-out forwards;
+}
+
+@keyframes animeMessage {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes anineCard {
+    0% {
+        opacity: 0;
+        transform: translateY(-35%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+

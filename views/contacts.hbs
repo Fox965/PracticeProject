@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title id="title">Контакты</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="style/output.css" rel="stylesheet">
+    <script src="scripts/index.js" defer></script>
+    <script src="https://kit.fontawesome.com/1b0b0dda35.js" crossorigin="anonymous"></script>
+</head>
+<body class="font-main">
+    <div class="main-background">
+        <div class="container mx-auto pt-5">
+            {{> header}}
+
+            <div class="mt-6 lg:mt-20 relative z-0">
+                <h1 class="text-xl lg:text-4xl font-bold">Факты:</h1>
+                <div class="lg:mt-14 flex flex-col items-center lg:flex-row gap-y-20 lg:gap-y-0 lg:gap-x-20">
+                    <div class="relative max-w-[309px] w-full">
+                        <span class="font-[poppins] absolute left-0 bottom-0 text-white text-[176px] font-bold opacity-60">1</span>
+                        <p class="ml-9 text-lg font-medium relative z-10">
+                            Осуществляемые компанией «кто мы там» постоянные инвестиции в сертификацию своей продукции, убедительно подтверждают лидерство компании на украинском рынке высококачественной мягкой мебели.
+                        </p>
+                    </div>
+                    <div class="relative max-w-[309px] w-full">
+                        <span class="font-[poppins] absolute left-0 bottom-0 text-white text-[176px] font-bold opacity-60">2</span>
+                        <p class="ml-9 text-lg font-medium relative z-10">
+                            Фабрика «кто мы там» сертифицирована по системе менеджмента качества ISO 9001:2000 на соответствие международным стандартам, представительством «Бюро Веритас» в Украине.
+                        </p>
+                    </div>
+                    <div class="relative max-w-[309px] w-full">
+                        <span class="font-[poppins] absolute left-0 bottom-0 text-white text-[176px] font-bold opacity-60">3</span>
+                        <p class="ml-9 text-lg font-medium relative z-10">
+                            Компания «кто мы там» первой из украинских производителей мягкой мебели обеспечила свою мебель полноценной  гарантией и первой обоснованно заявила о лучшем качестве производимой мебели.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-60 mb-28 font-[raleway] max-w-7xl w-full mx-auto">
+                <div class="flex lg:gap-y-7 justify-center lg:-translate-x-7">
+
+                    <div class="max-w-[370px] w-full p-[81px_66px_92px_65px] list-none bg-[url(../assets/contacts/backgroundCard.png)]">
+                        <h2 class="text-2xl text-[#007AFF] font-bold">Так далее</h2>
+                        <div class="mt-5 text-white flex flex-col gap-y-2.5">
+                            <li>
+                                <b>Адрес</b> ул. Келецкая 117 Б
+                            </li>
+                            <li>
+                                <b>ТЦ «ПЛАЗА Парк»</b>
+                            </li>
+                            <li>
+                                <b>Почта:</b> makoviy_marina@mail.ru
+                            </li>
+                            <li>
+                                <b>Телефон:</b> +38 067 432 14 22
+                            </li>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="lg:grid flex flex-col lg:grid-cols-2 xl:grid-cols-3 gap-y-7 mt-7 justify-center items-center">
+                    {{#each cards}}
+                        <div class="max-w-[370px] w-full p-[81px_66px_92px_65px] list-none bg-[url(../assets/contacts/backgroundCard.png)]">
+                            <h2 class="text-2xl text-[#007AFF] font-bold">Так далее</h2>
+                            <div class="mt-5 text-white flex flex-col gap-y-2.5">
+                                <li>
+                                    <b>Адрес</b> ул. Келецкая 117 Б
+                                </li>
+                                <li>
+                                    <b>ТЦ «ПЛАЗА Парк»</b>
+                                </li>
+                                <li>
+                                    <b>Почта:</b> makoviy_marina@mail.ru
+                                </li>
+                                <li>
+                                    <b>Телефон:</b> +38 067 432 14 22
+                                </li>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+
+        </div>
+
+        {{> thirdFooter}}
+    </div>
+</body>
+</html>

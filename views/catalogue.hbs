@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title id="title">Каталог</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="style/output.css" rel="stylesheet">
+    <script src="scripts/index.js" defer></script>
+    <script src="scripts/catalogue.js" defer></script>
+    <script src="https://kit.fontawesome.com/1b0b0dda35.js" crossorigin="anonymous"></script>
+</head>
+<body class="font-main">
+    <div class="main-background">
+        <div class="container mx-auto pt-5">
+            {{> header}}
+
+            <div class="flex flex-col lg:flex-row justify-between items-center mt-7 lg:mt-28 max-w-7xl mx-auto w-full">
+                <!--ЖАНРЫ-->
+                <div class="relative inline-block max-w-64 w-full z-10">
+                    <button id="dropbtn" class="py-2 px-3">
+                        <span id="value-dropbtn">жанры</span>
+                        <i class="fa-solid fa-chevron-down ml-2.5" style="color: #000000;"></i>
+                    </button>
+                    <div id="dropdown-content" class="dropdown absolute hidden shadow-[0_0_17px_4px_00000018] z-10">
+                        <button data-value="Психология" class="block px-4 pt-2 py-1 text-left lg:hover:bg-[#292929] w-full">
+                            Психология
+                        </button>
+                        <button data-value="История" class="block px-4 py-1 text-left lg:hover:bg-[#292929] w-full">
+                            История
+                        </button>
+                        <button data-value="Бизнес - книги" class="block px-4 py-1 text-left lg:hover:bg-[#292929] w-full">
+                            Бизнес - книги
+                        </button>
+                        <button data-value="Хобби, досуг" class="block px-4 py-1 text-left lg:hover:bg-[#292929] w-full">
+                            Хобби, досуг
+                        </button>
+                        <button data-value="Спорт" class="block px-4 py-1 text-left lg:hover:bg-[#292929] w-full">
+                            Спорт
+                        </button>
+                        <button data-value="Дом, дача" class="block px-4 py-1 text-left lg:hover:bg-[#292929] w-full">
+                            Дом, дача
+                        </button>
+                        <button data-value="Детские книги" class="block px-4 py-1 pb-2 text-left lg:hover:bg-[#292929] w-full">
+                            Детские книги
+                        </button>
+                    </div>
+                </div>
+
+                <!--ПОИСК-->
+                <form action="" id="search-form" class="mt-7 lg:mt-0">
+                    <div class="flex border border-black border-solid">
+                        <input id="input-search" type="search" placeholder="Поиск" class="bg-transparent outline-0 text-lg font-medium py-1.5 px-3 placeholder:text-black">
+                        <button id="button-search" class="search-button" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!--СПИСОК КНИГ-->
+            <div id='piska' class="max-w-7xl grid grid-cols-1 lg:grid-cols-4 gap-y-12 lg:gap-y-10 mt-10 lg:mt-36 mx-auto">
+                {{#each catalogue}}
+                    <a href="/book?id={{this.book_id}}" class="blcok max-w-60 w-full mx-auto">
+                        <div class="max-w-60 w-full">
+                            <img src="{{this.book_image}}" alt="{{this.book_name}}" class="w-full">
+                        </div>
+                        <div class="mt-2 text-center">
+                            <h4 class="text-white text-lg font-black">
+                                {{this.book_name}}
+                            </h4>
+                            <span class="text-white text-lg mt-2">
+                            ${{this.book_price}}
+                            </span>
+                        </div>
+                    </a>
+                {{/each}}
+            </div>
+
+            <!--ПАГИНАЦИЯ-->
+            <div class="flex justify-center items-center gap-x-4 my-24">
+                <button>
+                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 1L1 6.21739L7 11" stroke="#E6A150" stroke-width="0.5"/>
+                    </svg>
+                </button>
+                <div class="text-xl font-light text-[#E7A34E] flex gap-x-3">
+                    <a href="">
+                        1
+                    </a>
+                    <a href="" class="font-medium text-[#E6A150]">
+                        2
+                    </a>
+                    <a href="">
+                        3
+                    </a>
+                </div>
+                <button>
+                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 6.21739L1 11" stroke="#E6A150" stroke-width="0.5"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        {{> thirdFooter}}
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title id="title">Авторизация</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="style/output.css" rel="stylesheet">
+    <script src="scripts/index.js" defer></script>
+    <script src="scripts/auth.js" defer></script>
+</head>
+<body class="font-main overflow-x-hidden lg:overflow-x-auto">
+    <div class="main-background">
+        <div class="container mx-auto pt-5 relative">
+            {{> header}}
+
+            <div class="hidden absolute top-[350px] w-[161px] h-[161px] lg:flex justify-center items-center rounded-full animate-upper-fast auth-gradient">
+                <img src="assets/auth/round1.png" alt="" class="rounded-full w-[75%]">
+            </div>
+            <div class="hidden absolute top-[120px] left-[200px] w-[161px] h-[161px] lg:flex justify-center items-center rounded-full animate-upper-middle auth-gradient">
+                <img src="assets/auth/round2.png" alt="" class="rounded-full w-[75%]">
+            </div>
+            <div class="hidden absolute top-[150px] left-[690px] w-[354px] h-[354px] lg:flex justify-center items-center rounded-full animate-upper-slow auth-gradient">
+                <img src="assets/auth/round3.png" alt="" class="rounded-full w-[75%]">
+            </div>
+            <div class="hidden absolute top-[900px] left-[650px] w-[474px] h-[474px] lg:flex justify-center items-center rounded-full animate-upper-fast auth-gradient">
+                <img src="assets/auth/round4.png" alt="" class="rounded-full w-[75%]">
+            </div>
+            <div class="hidden absolute top-[1050px] left-[70px] w-[405px] h-[405px] lg:flex justify-center items-center rounded-full animate-upper-slow auth-gradient">
+                <img src="assets/auth/round5.png" alt="" class="rounded-full w-[75%]">
+            </div>
+            <div class="hidden absolute top-[950px] w-[161px] h-[161px] lg:flex justify-center items-center rounded-full animate-upper-middle auth-gradient">
+                <img src="assets/auth/round6.png" alt="" class="rounded-full w-[75%]">
+            </div>
+
+            <div class="flex justify-evenly items-center text-xs pt-[102px] pb-[351.67px] lg:pt-[292px] lg:pb-[345px]">
+                <div id="enterForm" class="flex justify-center items-center lg:text-2xl font-black w-[321px] h-[304.33px] lg:w-[674px] lg:h-[639px] rounded-full auth-gradient">
+                    <div class="flex justify-between flex-col items-center h-[85%] mt-6 mb-[14px] mx-auto lg:mt-[53px] lg:mb-[36px] lg:ml-[77px] lg:mr-[85px]">
+                        <p class="">Вход</p>
+                        <form action="/enterSystem" method="post" class="flex flex-col">
+                            <input type="text" required name="login" placeholder="Логин" class="text-xs lg:text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-10 w-[158px] lg:w-[511px] border-b">
+                            <div class="flex relative">
+                                <input id="passField" required type="password" name="password" placeholder="Пароль" class="text-xs lg:text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-10 w-[158px] lg:w-[511px] border-b">
+                                <div id="showPass" class="cursor-pointer text-transparent size-[18px] lg:size-[37px] absolute right-0 lg:-top-4 lg:right-0 bg-[url('/assets/auth/eye-close-18.png')] lg:bg-[url('/assets/auth/eye-close.png')]"></div>
+                            </div>
+                            <button id="enterSystem">Войти</button>
+                        </form>
+                        {{#if error}}{{error}}{{/if}}
+                        <button id="regButton">Регистрация</button>
+                    </div>
+                </div>
+                <div id="regForm" class="hidden flex justify-center items-center lg:text-2xl font-black w-[321px] h-[304.33px] lg:w-[674px] lg:h-[639px] rounded-full auth-gradient">
+                    <div class="flex justify-between flex-col items-center h-[85%] mt-6 mb-[14px] mx-auto lg:mt-[53px] lg:mb-[36px] lg:ml-[77px] lg:mr-[85px]">
+                        <p class="">Регистрация</p>
+                        <form action="/regSystem" method="post" class="flex flex-col w-[158px] lg:w-[511px]">
+                            <input type="text" required placeholder="ИМЯ" name="name" class="text-xs lg:text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-3 w-[158px] lg:w-[511px] border-b">
+                            <input type="text" required placeholder="Логин" name="login" class="text-xs lg:text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-3 lw-[158px] g:w-[511px] border-b">
+                            <input type="email" required placeholder="Ваша почта" name="email" class="text-xs lg:text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-3 w-[158px] lg:w-[511px] border-b">
+                            <div class="flex flex-col">
+                                <input id="passRegField" required type="password" name="password" placeholder="Пароль" class="text-xs lg:text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-3 w-[158px] lg:w-[511px] border-b">
+                                <div class="flex relative">
+                                    <input id="passRegRepeatField" required type="password" name="rpassword" placeholder="Повторите пароль" class="text-xs lg:text-sm placeholder:text-black bg-transparent border-b-black outline-none mb-3 w-[158px] lg:w-[511px] border-b">
+                                    <div id="showRegPass" class="cursor-pointer text-transparent size-[18px] lg:size-[37px] absolute right-0 lg:-top-4 lg:right-0 bg-[url('/assets/auth/eye-close-18.png')] lg:bg-[url('/assets/auth/eye-close.png')]"></div>
+                                </div>
+                            </div>
+                            <button id="regSystem" class=" mt-3 lg:mt-10">Зарегистрироваться</button>
+                        </form>
+                        
+                        <button id="enterButton">Войти</button>
+                    </div>
+                    
+                </div>
+                <img src="assets/auth/men-point-in-ass.png" class="hidden lg:block h-[646px] animate-sex" alt="men-point-in-ass">
+            </div>
+        </div>
+        <img src="assets/auth/waves.png" alt="waves" class="hidden lg:block w-full">
+        {{> thirdFooter}}
+    </div>
+</body>
+</html>

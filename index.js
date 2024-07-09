@@ -90,6 +90,9 @@ app.get(`/`, (req, res) => {
 })
 
 app.get(`/catalogue`, (req, res) => {
+  connection.query('SELECT * FROM books', (err, result) =>{
+    catalogue = result
+  })
   res.render(`catalogue`, {
     nav: nav,
     user: user,
@@ -144,11 +147,13 @@ app.get(`/dob`, (req, res) => {
     connection.query('INSERT INTO korzina (`acc_id`, `book_id`) VALUES (?, ?)', [user.acc_id, id], (err, result) =>{
     if(err) {
       console.log(err)
-    } else {
-      korzina = result
+    } else {   
       console.log(`Добавление книги ${id} в корзину успешно!`)
     }
-  
+
+    connection.query('SELECT * FROM korzina', (err, result) =>{
+      korzina = result
+    })
   res.redirect(`/book?id=${id}`)
 })}})
 
@@ -266,18 +271,15 @@ app.get(`/account`, (req, res)=>{
   
 })
 
+let korzina_result = []
 app.get(`/korzina`, (req, res)=>{
   if(user == '') {
     res.redirect(`/auth`)
   } else {
-    let korzina_result = []
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
+    korzina_result = []
     connection.query('SELECT books.book_id, book_name, book_author, book_pages, book_price, book_image, acc_id FROM books INNER JOIN korzina ON books.book_id = korzina.book_id WHERE acc_id = ?', [user.acc_id], (err, result) =>{
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-
-      console.log(err)
-      korzina_result = result
+      korzina_result = [...result]
+      console.log(korzina_result)
     })
     
     res.render(`korzina`, {
@@ -312,6 +314,9 @@ app.get(`/main`, (req, res)=>{
 
 app.get(`/proposal`, (req, res)=>{
   if(user.acc_role == `admin`){
+    connection.query('SELECT * FROM predlozhka', (err, result) =>{
+      predlozhka = result
+    })
     res.render(`proposal`, {
       user: user,
       predlozhka: predlozhka,
@@ -326,40 +331,53 @@ app.get(`/proposal`, (req, res)=>{
 app.post('/submit-data/:endpoint', urlencodedParser, (req, res) => {
   let endpoint = req.params.endpoint;
   let data = req.body.data;
-  console.log(data)
   if (endpoint == 'first') {
     // Логика обработки для первого POST-запроса
-    connection.query('INSERT INTO books (`book_name`, `book_author`, `book_genre`, `book_pages`, `book_price`, `book_image`) VALUES (?, ?, ?, ?, ?, ?)', [data.name, data.author, data.genre, data.pages, data.price, data.image], (err, result) =>{
+    let query = 'INSERT INTO books (`book_name`, `book_author`, `book_genre`, `book_pages`, `book_price`, `book_image`) VALUES (?, ?, ?, ?, ?, ?)';
+    let values = [data.name, data.author, data.genre, data.pages, data.price, data.image];
+    connection.query(query, values, (err, result) =>{
+      if(err) {
+        console.log(err);
+      }
+    });
+
+    query = 'SELECT * FROM books WHERE book_name = ? AND book_author = ? AND book_genre = ? AND book_pages = ? AND book_price = ? AND book_image = ?';
+    values = [data.name, data.author, data.genre, data.pages, data.price, data.image];
+    connection.query(query, values, (err, result) =>{
       if(err) {
         console.log(err);
       } else {
-        catalogue = result;
+        catalogue.push(result)
         console.log(`Добавление книги ${data.name} в каталог прошло успешно!`);
       }
     });
 
-    connection.query('DELETE FROM predlozhka WHERE pred_name = ? AND pred_author = ? AND genre_name = ? AND pred_pages = ? AND pred_price = ? AND pred_image = ?'), [data.name, data.author, data.genre, data.pages, data.price, data.image], (err, result) =>{
-      if(err) {
-        console.log(err)
-      } else {
-        predlozhka = result
-        console.log(`Удаление книги ${data.name} из предложки прошло успешно!`)
-      }
-    }
+    query = 'DELETE FROM predlozhka WHERE pred_id = ?';
+    values = [data.id];
+    connection.query(query, values, (err, result) =>{
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(`Удаление книги ${data.name} из предложки прошло успешно!`);
+        }                       
+    })
+    connection.query('SELECT * FROM predlozhka', (err, result) =>{
+      predlozhka = result
+    })
 
+// Логика обработки для второго POST-запроса
   } else if (endpoint == 'second') {
-    connection.query('DELETE FROM predlozhka WHERE pred_name = ? AND pred_author = ? AND genre_name = ? AND pred_pages = ? AND pred_price = ? AND pred_image = ?'), [data.name, data.author, data.genre, data.pages, data.price, data.image], (err, result) =>{
-      if(err) {
-        console.log(err)
-      } else {
-        predlozhka = result
-        console.log(`Удаление книги ${data.name} из предложки прошло успешно!`)
-      }
-    }
-    
-  } else {
-    // Обработка ошибочного случая
-    res.status(400).send('Неправильный endpoint');
+    connection.query('DELETE FROM predlozhka WHERE pred_id = ?', [data.id], (err, result) =>{
+        if (err) {
+          console.log(err);
+        } else {
+
+          console.log(`Удаление книги ${data.name} из предложки прошло успешно!`);
+        }
+    })
+    connection.query('SELECT * FROM predlozhka', (err, result) =>{
+      predlozhka = result
+    })
   }
 });
 

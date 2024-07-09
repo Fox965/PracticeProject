@@ -20,14 +20,14 @@ let noButton = document.querySelectorAll(`#buttonsYesNo > #noButton`);
 
 function submitForm(endpoint) {
     
+    let id = document.getElementById('id').value;
     let author = document.getElementById('author').value;    
     let genre = document.getElementById('genre').value;  
     let price = document.getElementById('price').value;  
     let name = document.getElementById('name').value;  
     let pages = document.getElementById('pages').value;  
     let email = document.getElementById('email').value;  
-    let image = document.getElementById('image').src;  
-    let data = {'author': author, 'genre': genre, 'price': price, 'name': name, 'pages': pages, 'email': email, 'image': image}
+    let data = {'id': id, 'author': author, 'genre': genre, 'price': price, 'name': name, 'pages': pages, 'email': email, 'image': 'assets/book/imageBook.png'}
     // Отправка POST-запроса с использованием fetch и метода HTTP, который определяется параметром endpoint
     console.log(data)
     fetch('/submit-data/' + endpoint, {

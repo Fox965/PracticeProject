@@ -130,12 +130,17 @@ app.get(`/contacts`, (req, res) => {
   })
 })
 
+let book = ''
 app.get(`/book`, (req, res) => {
   let bookId = req.query.id
+  connection.query('SELECT * FROM books WHERE book_id = ?', [bookId], (err, result) =>{
+    book = result
+    console.log(book[0])
+  })
   res.render(`book`, {
     nav: nav,
     user: user,
-    book: catalogue[Number(bookId)]
+    book: book[0]
   })
 })
 
@@ -207,14 +212,9 @@ app.post(`/regSystem`, urlencodedParser, (req, res) => {
           console.log(`Регистрация пользователя ${req.body.name} прошла успешно!`)
         }
       })
-      users.push({  
-        acc_name: req.body.name,
-        acc_login: req.body.login,
-        acc_password: req.body.password,
-        acc_email: req.body.email,
-        acc_role: `user`,
-        acc_avatar: "assets/mainAdmin/user.svg"
-      });
+      connection.query('SELECT * FROM account', (err, result) =>{
+        users = result
+      })
       res.redirect(`/auth`);
     } else {
       res.render(`auth`, {
@@ -257,21 +257,24 @@ app.get(`/logout`, (req, res)=>{
   res.redirect('/auth')
 })
 
-
+let korzina_result = ``
 app.get(`/account`, (req, res)=>{
   if(user == '') {
     res.redirect(`/auth`)
   } else {
+    connection.query('SELECT books.book_id, book_name, book_author, book_pages, book_price, book_image, acc_id FROM books INNER JOIN korzina ON books.book_id = korzina.book_id WHERE acc_id = ?', [user.acc_id], (err, result) =>{
+      korzina_result = result
+      console.log(korzina_result)
+    })
     res.render(`account`, {
       nav: nav,
       user: user,
-      korzina: korzina,
+      korzina: korzina_result,
     })
   }
   
 })
 
-let korzina_result = ``
 app.get(`/korzina`, (req, res)=>{
   if(user == '') {
     res.redirect(`/auth`)

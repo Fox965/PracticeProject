@@ -271,14 +271,13 @@ app.get(`/account`, (req, res)=>{
   
 })
 
-let korzina_result = []
+let korzina_result = ``
 app.get(`/korzina`, (req, res)=>{
   if(user == '') {
     res.redirect(`/auth`)
   } else {
-    korzina_result = []
     connection.query('SELECT books.book_id, book_name, book_author, book_pages, book_price, book_image, acc_id FROM books INNER JOIN korzina ON books.book_id = korzina.book_id WHERE acc_id = ?', [user.acc_id], (err, result) =>{
-      korzina_result = [...result]
+      korzina_result = result
       console.log(korzina_result)
     })
     

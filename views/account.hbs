@@ -18,7 +18,7 @@
             {{> header}}
 
             <div class="account-form mt-[138px] mb-10 lg:h-[238px] w-full bg-white border border-stroke rounded-[20px] shadow-cards text-black-two">
-                <div class="card-content flex flex-col lg:flex-row justify-between mx-[50px] lg:ml-[120px] lg:mr-0">
+                <form action="/account" method="post" class="card-content flex flex-col lg:flex-row justify-between mx-[50px] lg:ml-[120px] lg:mr-0">
                     <div class="flex flex-col items-center lg:block -mt-[50px] lg:mt-[35px] lg:mb-[30px]">
                         <img src="{{user.acc_avatar}}" alt="avatar" id="avatarImage" class="size-[119px] rounded-full object-cover mb-3 lg:mb-5">
                         <label id="avatarButton" for="file-upload" class="relative flex justify-center items-center bg-main-yellow w-[120px] h-[35px] rounded-[25px]
@@ -42,7 +42,7 @@
                     <div class="flex flex-col justify-between items-end w-full lg:w-[344.2px] mt-[35px] mb-[30px]">
                         <button id="editAccount" class="mr-[46px] mt-4 mb-4"><img src="assets/account/edit.png" alt=""></button>
                         <div class="buttons flex justify-between w-full hidden">
-                            <button id="confirm" class="bg-main-yellow w-[120px] lg:w-[161px] h-[37px] rounded-[25px] text-white text-xl font-semibold hover:bg-main-yellow-hover duration-300">принять</button>
+                            <button id="confirm" type="submit" class="bg-main-yellow w-[120px] lg:w-[161px] h-[37px] rounded-[25px] text-white text-xl font-semibold hover:bg-main-yellow-hover duration-300">принять</button>
                             <button id="cancel" class="bg-main-yellow w-[120px] lg:w-[161px] h-[37px] rounded-[25px] text-white text-xl font-semibold hover:bg-main-yellow-hover duration-300 lg:ml-[18px]">отменить</button>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             <p class="text-[16px] text-black">*До скидки <span>15%</span> не хватает покупок на сумму: <span>1255</span> ₽</p>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
             <div class="orders text-xl h-auto w-full mb-[50px] bg-white border border-stroke rounded-[20px] shadow-cards text-black-two">
                 <div class="orders-content flex flex-col mt-4 lg:mt-[60px] mb-[73px] lg:mx-[120px]">

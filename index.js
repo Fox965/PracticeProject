@@ -145,7 +145,8 @@ app.get(`/book`, (req, res) => {
 })
 
 app.get(`/dob`, (req, res) => {
-  if(!user) {
+  console.log(user)
+  if(user == '') {
     res.redirect(`/auth`)
   } else {
     let id = req.query.id

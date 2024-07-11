@@ -330,7 +330,6 @@ app.get(`/proposal`, (req, res)=>{
   } 
 })
 
-///////////////////////////////////////////////////////////////////////////////////////////////
 app.post('/submit-data/:endpoint', urlencodedParser, (req, res) => {
   let endpoint = req.params.endpoint;
   let data = req.body.data;
@@ -343,7 +342,6 @@ app.post('/submit-data/:endpoint', urlencodedParser, (req, res) => {
         console.log(err);
       }
     });
-
     query = 'SELECT * FROM books WHERE book_name = ? AND book_author = ? AND book_genre = ? AND book_pages = ? AND book_price = ? AND book_image = ?';
     values = [data.name, data.author, data.genre, data.pages, data.price, data.image];
     connection.query(query, values, (err, result) =>{
@@ -354,7 +352,6 @@ app.post('/submit-data/:endpoint', urlencodedParser, (req, res) => {
         console.log(`Добавление книги ${data.name} в каталог прошло успешно!`);
       }
     });
-
     query = 'DELETE FROM predlozhka WHERE pred_id = ?';
     values = [data.id];
     connection.query(query, values, (err, result) =>{

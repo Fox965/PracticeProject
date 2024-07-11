@@ -59,7 +59,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     .then(data => {
     if (data.success) {
     // Очищаем предыдущие результаты
-    const resultsContainer = document.querySelector(`#piska`);
+    const resultsContainer = document.querySelector(`#a`);
     resultsContainer.innerHTML = '';
     
     // Добавляем новые результаты
